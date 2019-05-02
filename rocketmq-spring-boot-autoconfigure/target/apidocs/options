@@ -1,0 +1,24 @@
+-classpath
+'C:/Users/Thierry/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar;C:/Users/Thierry/.m2/repository/com/google/guava/guava/27.1-jre/guava-27.1-jre.jar;C:/Users/Thierry/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar;C:/Users/Thierry/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:/Users/Thierry/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar;C:/Users/Thierry/.m2/repository/org/checkerframework/checker-qual/2.5.2/checker-qual-2.5.2.jar;C:/Users/Thierry/.m2/repository/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar;C:/Users/Thierry/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar;C:/Users/Thierry/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar;C:/Users/Thierry/.m2/repository/org/projectlombok/lombok/1.18.6/lombok-1.18.6.jar;C:/Users/Thierry/.m2/repository/com/aliyun/openservices/ons-client/1.8.0.Final/ons-client-1.8.0.Final.jar;C:/Users/Thierry/.m2/repository/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar;C:/Users/Thierry/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.1.4.RELEASE/spring-boot-autoconfigure-2.1.4.RELEASE.jar;C:/Users/Thierry/.m2/repository/org/springframework/boot/spring-boot/2.1.4.RELEASE/spring-boot-2.1.4.RELEASE.jar;C:/Users/Thierry/.m2/repository/org/springframework/spring-core/5.1.6.RELEASE/spring-core-5.1.6.RELEASE.jar;C:/Users/Thierry/.m2/repository/org/springframework/spring-jcl/5.1.6.RELEASE/spring-jcl-5.1.6.RELEASE.jar;C:/Users/Thierry/.m2/repository/org/springframework/spring-context/5.1.6.RELEASE/spring-context-5.1.6.RELEASE.jar;C:/Users/Thierry/.m2/repository/org/springframework/spring-expression/5.1.6.RELEASE/spring-expression-5.1.6.RELEASE.jar;C:/Users/Thierry/.m2/repository/org/springframework/boot/spring-boot-starter-aop/2.1.4.RELEASE/spring-boot-starter-aop-2.1.4.RELEASE.jar;C:/Users/Thierry/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.4.RELEASE/spring-boot-starter-2.1.4.RELEASE.jar;C:/Users/Thierry/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.1.4.RELEASE/spring-boot-starter-logging-2.1.4.RELEASE.jar;C:/Users/Thierry/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar;C:/Users/Thierry/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar;C:/Users/Thierry/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.11.2/log4j-to-slf4j-2.11.2.jar;C:/Users/Thierry/.m2/repository/org/apache/logging/log4j/log4j-api/2.11.2/log4j-api-2.11.2.jar;C:/Users/Thierry/.m2/repository/org/slf4j/jul-to-slf4j/1.7.26/jul-to-slf4j-1.7.26.jar;C:/Users/Thierry/.m2/repository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar;C:/Users/Thierry/.m2/repository/org/springframework/spring-aop/5.1.6.RELEASE/spring-aop-5.1.6.RELEASE.jar;C:/Users/Thierry/.m2/repository/org/springframework/spring-beans/5.1.6.RELEASE/spring-beans-5.1.6.RELEASE.jar;C:/Users/Thierry/.m2/repository/org/aspectj/aspectjweaver/1.9.2/aspectjweaver-1.9.2.jar;C:/Users/Thierry/.m2/repository/org/springframework/boot/spring-boot-configuration-processor/2.1.4.RELEASE/spring-boot-configuration-processor-2.1.4.RELEASE.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'F:/rocketmq-spring-boot/rocketmq-spring-boot-autoconfigure/src/main/java;F:/rocketmq-spring-boot/rocketmq-spring-boot-autoconfigure/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2019. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'F:/rocketmq-spring-boot/rocketmq-spring-boot-autoconfigure/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'rocketmq-spring-boot-autoconfigure 1.0.0-RELEASE API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'F:/rocketmq-spring-boot/rocketmq-spring-boot-autoconfigure/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'rocketmq-spring-boot-autoconfigure 1.0.0-RELEASE API'
