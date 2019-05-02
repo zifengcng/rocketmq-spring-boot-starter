@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.rocketmq</groupId>
+    <groupId>com.github.thierrysquirrel</groupId>
     <artifactId>rocketmq-spring-boot</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0-RELEASE</version>
@@ -50,13 +50,13 @@
             <version>${google.code.gson.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.github.rocketmq</groupId>
+            <groupId>com.github.thierrysquirrel</groupId>
             <artifactId>rocketmq-spring-boot-starter</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>com.github.rocketmq</groupId>
+            <groupId>com.github.thierrysquirrel</groupId>
             <artifactId>rocketmq-spring-boot-autoconfigure</artifactId>
             <version>${project.version}</version>
         </dependency>
