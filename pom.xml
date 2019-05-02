@@ -8,6 +8,11 @@
     <artifactId>rocketmq-spring-boot</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0-RELEASE</version>
+
+    <name>rocketmq-spring-boot</name>
+    <description>Spring Boot Support for RocketMQ</description>
+    <url>https://github.com/ThierrySquirrel/rocketmq-spring-boot</url>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
