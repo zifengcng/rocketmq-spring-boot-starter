@@ -4,23 +4,25 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 /**
- * ClassName: JsonUtils <br/>
- * Description: <br/>
- * date: 2019/4/27 16:16<br/>
+ * ClassName: JsonUtils  
+ * Description:  
+ * date: 2019/4/27 16:16 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class JsonUtils {
+	private static Gson gson=new GsonBuilder ()
+			.setPrettyPrinting ()
+			.create ();
+
 	/**
 	 * 得到Gson
 	 *
 	 * @return gson
 	 */
 	private static Gson getGson() {
-		return new GsonBuilder()
-				.setPrettyPrinting()
-				.create();
+		return gson;
 	}
 
 	/**

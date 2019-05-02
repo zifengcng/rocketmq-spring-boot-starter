@@ -7,11 +7,11 @@ import com.github.thierrysquirrel.core.producer.DefaultSendCallback;
 import com.github.thierrysquirrel.core.producer.MessageSendType;
 
 /**
- * ClassName: SendMessageStrategy <br/>
- * Description: <br/>
- * date: 2019/4/29 23:37<br/>
+ * ClassName: SendMessageStrategy  
+ * Description:  
+ * date: 2019/4/29 23:37 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class SendMessageStrategy {

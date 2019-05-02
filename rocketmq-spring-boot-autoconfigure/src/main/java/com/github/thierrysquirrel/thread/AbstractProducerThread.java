@@ -4,11 +4,11 @@ import com.github.thierrysquirrel.autoconfigure.RocketProperties;
 import lombok.Data;
 
 /**
- * ClassName: AbstractProducerThread <br/>
- * Description: <br/>
- * date: 2019/4/29 21:39<br/>
+ * ClassName: AbstractProducerThread  
+ * Description:  
+ * date: 2019/4/29 21:39 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 @Data

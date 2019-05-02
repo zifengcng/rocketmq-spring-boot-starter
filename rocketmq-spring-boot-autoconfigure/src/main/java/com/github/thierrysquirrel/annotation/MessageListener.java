@@ -5,11 +5,11 @@ import org.springframework.stereotype.Component;
 import java.lang.annotation.*;
 
 /**
- * ClassName: MessageListener <br/>
- * Description: <br/>
- * date: 2019/4/26 22:37<br/>
+ * ClassName: MessageListener  
+ * Description:  
+ * date: 2019/4/26 22:37 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 @Target(ElementType.METHOD)

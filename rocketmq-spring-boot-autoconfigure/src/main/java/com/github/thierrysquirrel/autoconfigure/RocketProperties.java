@@ -5,11 +5,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 
 /**
- * ClassName: RocketProperties <br/>
- * Description: <br/>
- * date: 2019/4/25 15:56<br/>
+ * ClassName: RocketProperties  
+ * Description:  
+ * date: 2019/4/25 15:56 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 @Data

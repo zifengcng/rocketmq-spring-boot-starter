@@ -3,11 +3,11 @@ package com.github.thierrysquirrel.annotation;
 import java.lang.annotation.*;
 
 /**
- * ClassName: OrderMessage <br/>
- * Description: <br/>
- * date: 2019/4/27 21:36<br/>
+ * ClassName: OrderMessage  
+ * Description:  
+ * date: 2019/4/27 21:36 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 @Target(ElementType.METHOD)

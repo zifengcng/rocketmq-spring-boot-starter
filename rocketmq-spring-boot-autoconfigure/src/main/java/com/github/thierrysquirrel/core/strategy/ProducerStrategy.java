@@ -7,11 +7,11 @@ import com.github.thierrysquirrel.autoconfigure.RocketProperties;
 import com.github.thierrysquirrel.core.factory.SendMessageFactory;
 
 /**
- * ClassName: ProducerStrategy <br/>
- * Description: <br/>
- * date: 2019/4/29 21:34<br/>
+ * ClassName: ProducerStrategy  
+ * Description:  
+ * date: 2019/4/29 21:34 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class ProducerStrategy {

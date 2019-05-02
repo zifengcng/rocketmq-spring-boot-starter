@@ -13,11 +13,11 @@ import com.github.thierrysquirrel.core.producer.DefaultLocalTransactionExecuter;
 import com.github.thierrysquirrel.core.strategy.SendMessageStrategy;
 
 /**
- * ClassName: SendMessageFactory <br/>
- * Description: <br/>
- * date: 2019/4/29 21:52<br/>
+ * ClassName: SendMessageFactory  
+ * Description:  
+ * date: 2019/4/29 21:52 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class SendMessageFactory {

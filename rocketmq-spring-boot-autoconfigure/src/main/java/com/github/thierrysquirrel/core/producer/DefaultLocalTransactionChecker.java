@@ -7,11 +7,11 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * ClassName: DefaultLocalTransactionChecker <br/>
- * Description: <br/>
- * date: 2019/4/28 21:42<br/>
+ * ClassName: DefaultLocalTransactionChecker  
+ * Description:  
+ * date: 2019/4/28 21:42 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 @Data

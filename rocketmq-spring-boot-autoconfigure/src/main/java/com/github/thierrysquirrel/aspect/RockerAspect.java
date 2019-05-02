@@ -16,11 +16,11 @@ import org.aspectj.lang.annotation.Pointcut;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * ClassName: ThierrySquirrel <br/>
- * Description: <br/>
- * date: 2019/4/28 21:07<br/>
+ * ClassName: RockerAspect
+ * Description:  
+ * date: 2019/4/28 21:07 
  *
- * @author Thierry<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 @Aspect

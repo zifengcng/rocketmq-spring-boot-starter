@@ -1,11 +1,11 @@
 package com.github.thierrysquirrel.core.utils;
 
 /**
- * ClassName: ByteUtils <br/>
- * Description: <br/>
- * date: 2019/4/28 22:42<br/>
+ * ClassName: ByteUtils  
+ * Description:  
+ * date: 2019/4/28 22:42 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class ByteUtils {

@@ -5,11 +5,11 @@ import com.aliyun.openservices.ons.api.transaction.TransactionStatus;
 import java.lang.annotation.*;
 
 /**
- * ClassName: TransactionMessage <br/>
- * Description: <br/>
- * date: 2019/4/27 21:39<br/>
+ * ClassName: TransactionMessage  
+ * Description:  
+ * date: 2019/4/27 21:39 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 @Target(ElementType.METHOD)

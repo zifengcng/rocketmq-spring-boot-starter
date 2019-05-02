@@ -7,11 +7,11 @@ import com.github.thierrysquirrel.thread.AbstractProducerThread;
 
 
 /**
- * ClassName: ProducerFactoryExecution <br/>
- * Description: <br/>
- * date: 2019/4/28 21:31<br/>
+ * ClassName: ProducerFactoryExecution  
+ * Description:  
+ * date: 2019/4/28 21:31 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class ProducerFactoryExecution extends AbstractProducerThread {

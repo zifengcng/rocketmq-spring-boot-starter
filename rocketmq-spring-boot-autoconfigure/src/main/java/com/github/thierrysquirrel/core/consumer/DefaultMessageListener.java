@@ -9,11 +9,11 @@ import com.github.thierrysquirrel.error.RocketException;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * ClassName: DefaultMessageListener <br/>
- * Description: <br/>
- * date: 2019/4/27 17:05<br/>
+ * ClassName: DefaultMessageListener  
+ * Description:  
+ * date: 2019/4/27 17:05 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 @Slf4j

@@ -3,11 +3,11 @@ package com.github.thierrysquirrel.core.factory;
 import java.lang.reflect.Method;
 
 /**
- * ClassName: MethodFactory <br/>
- * Description: <br/>
- * date: 2019/4/27 16:13<br/>
+ * ClassName: MethodFactory  
+ * Description:  
+ * date: 2019/4/27 16:13 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 

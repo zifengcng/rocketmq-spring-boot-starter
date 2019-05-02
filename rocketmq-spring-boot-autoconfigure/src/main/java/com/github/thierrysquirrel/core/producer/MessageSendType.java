@@ -1,11 +1,11 @@
 package com.github.thierrysquirrel.core.producer;
 
 /**
- * ClassName: MessageSendType <br/>
- * Description: <br/>
- * date: 2019/4/28 21:02<br/>
+ * ClassName: MessageSendType  
+ * Description:  
+ * date: 2019/4/28 21:02 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public enum  MessageSendType {

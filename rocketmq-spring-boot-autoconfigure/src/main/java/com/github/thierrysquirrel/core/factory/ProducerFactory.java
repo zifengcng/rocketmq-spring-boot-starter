@@ -13,11 +13,11 @@ import com.github.thierrysquirrel.autoconfigure.RocketProperties;
 import java.util.Properties;
 
 /**
- * ClassName: ProducerFactory <br/>
- * Description: <br/>
- * date: 2019/4/28 21:35<br/>
+ * ClassName: ProducerFactory  
+ * Description:  
+ * date: 2019/4/28 21:35 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class ProducerFactory {

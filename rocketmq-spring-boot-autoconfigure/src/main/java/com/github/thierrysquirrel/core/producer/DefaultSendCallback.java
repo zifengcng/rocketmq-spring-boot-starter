@@ -6,11 +6,11 @@ import com.aliyun.openservices.ons.api.SendResult;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * ClassName: DefaultSendCallback <br/>
- * Description: <br/>
- * date: 2019/4/29 23:32<br/>
+ * ClassName: DefaultSendCallback  
+ * Description:  
+ * date: 2019/4/29 23:32 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 @Slf4j

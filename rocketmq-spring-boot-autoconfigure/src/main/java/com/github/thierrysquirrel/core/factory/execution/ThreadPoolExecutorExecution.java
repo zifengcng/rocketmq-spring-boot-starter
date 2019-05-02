@@ -3,11 +3,11 @@ package com.github.thierrysquirrel.core.factory.execution;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * ClassName: ThreadPoolExecutorExecution <br/>
- * Description: <br/>
- * date: 2019/4/27 19:55<br/>
+ * ClassName: ThreadPoolExecutorExecution  
+ * Description:  
+ * date: 2019/4/27 19:55 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class ThreadPoolExecutorExecution {

@@ -6,11 +6,11 @@ import com.github.thierrysquirrel.autoconfigure.RocketProperties;
 import java.util.Properties;
 
 /**
- * ClassName: PropertiesFactory <br/>
- * Description: <br/>
- * date: 2019/4/27 20:26<br/>
+ * ClassName: PropertiesFactory  
+ * Description:  
+ * date: 2019/4/27 20:26 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class PropertiesFactory {

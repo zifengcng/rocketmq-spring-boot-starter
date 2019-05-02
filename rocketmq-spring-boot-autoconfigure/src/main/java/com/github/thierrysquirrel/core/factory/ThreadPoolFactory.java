@@ -9,11 +9,11 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * ClassName: ThreadPoolFactory <br/>
- * Description: <br/>
- * date: 2019/4/27 19:52<br/>
+ * ClassName: ThreadPoolFactory  
+ * Description:  
+ * date: 2019/4/27 19:52 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class ThreadPoolFactory {

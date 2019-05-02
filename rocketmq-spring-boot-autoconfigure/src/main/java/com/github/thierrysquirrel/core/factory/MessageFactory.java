@@ -6,11 +6,11 @@ import com.github.thierrysquirrel.annotation.RockerMessage;
 import com.github.thierrysquirrel.annotation.TransactionMessage;
 
 /**
- * ClassName: MessageFactory <br/>
- * Description: <br/>
- * date: 2019/4/28 21:55<br/>
+ * ClassName: MessageFactory  
+ * Description:  
+ * date: 2019/4/28 21:55 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class MessageFactory {

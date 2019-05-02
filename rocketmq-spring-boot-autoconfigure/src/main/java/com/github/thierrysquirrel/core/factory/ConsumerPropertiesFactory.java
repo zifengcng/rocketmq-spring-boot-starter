@@ -7,11 +7,11 @@ import com.github.thierrysquirrel.autoconfigure.RocketProperties;
 import java.util.Properties;
 
 /**
- * ClassName: ConsumerPropertiesFactory <br/>
- * Description: <br/>
- * date: 2019/4/27 15:37<br/>
+ * ClassName: ConsumerPropertiesFactory  
+ * Description:  
+ * date: 2019/4/27 15:37 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class ConsumerPropertiesFactory {

@@ -1,11 +1,11 @@
 package com.github.thierrysquirrel.error;
 
 /**
- * ClassName: RocketException <br/>
- * Description: <br/>
- * date: 2019/4/27 16:44<br/>
+ * ClassName: RocketException  
+ * Description:  
+ * date: 2019/4/27 16:44 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class RocketException extends Exception {

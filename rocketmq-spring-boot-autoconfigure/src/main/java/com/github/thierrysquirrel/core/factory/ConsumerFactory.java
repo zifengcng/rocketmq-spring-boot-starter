@@ -8,11 +8,11 @@ import java.util.Properties;
 
 
 /**
- * ClassName: ConsumerFactory <br/>
- * Description: <br/>
- * date: 2019/4/27 15:55<br/>
+ * ClassName: ConsumerFactory  
+ * Description:  
+ * date: 2019/4/27 15:55 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class ConsumerFactory {

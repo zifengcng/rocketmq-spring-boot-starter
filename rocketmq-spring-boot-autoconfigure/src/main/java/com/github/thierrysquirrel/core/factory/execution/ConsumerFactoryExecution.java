@@ -15,11 +15,11 @@ import com.github.thierrysquirrel.thread.AbstractConsumerThread;
 import java.util.Properties;
 
 /**
- * ClassName: ConsumerFactoryExecution <br/>
- * Description: <br/>
- * date: 2019/4/27 16:05<br/>
+ * ClassName: ConsumerFactoryExecution  
+ * Description:  
+ * date: 2019/4/27 16:05 
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class ConsumerFactoryExecution extends AbstractConsumerThread {

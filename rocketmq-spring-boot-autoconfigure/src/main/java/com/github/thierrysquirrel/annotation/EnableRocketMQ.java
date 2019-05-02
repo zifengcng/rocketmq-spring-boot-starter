@@ -7,11 +7,11 @@ import java.lang.annotation.*;
 
 
 /**
- * ClassName: MessageListener <br/>
- * Description: <br/>
- * date: 2019/4/26 16:26<br/>
+ * ClassName: MessageListener
+ * Description:
+ * date: 2019/4/26 16:26
  *
- * @author ThierrySquirrel<br />
+ * @author ThierrySquirrel
  * @since JDK 1.8
  */
 @Target({ElementType.TYPE})
