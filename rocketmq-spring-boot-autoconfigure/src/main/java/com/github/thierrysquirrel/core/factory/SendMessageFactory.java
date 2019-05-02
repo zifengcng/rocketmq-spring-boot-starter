@@ -24,7 +24,6 @@ public class SendMessageFactory {
 	public static void sendMessage(RockerMessage rockerMessage, RocketProperties rocketProperties, byte[] bytes) {
 		Producer producer = ProducerFactory.createProducer(rockerMessage, rocketProperties);
 		producer.start();
-		System.out.println("安全");
 		Message message = MessageFactory.createMessage(rockerMessage, bytes);
 		long startDeliverTime = rockerMessage.timeUnit().toMillis(rockerMessage.startDeliverTime());
 		message.setStartDeliverTime(System.currentTimeMillis() + startDeliverTime);

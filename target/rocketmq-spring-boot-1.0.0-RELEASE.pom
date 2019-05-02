@@ -32,7 +32,6 @@
         <google.guava.version>27.1-jre</google.guava.version>
         <maven.gpg.plugin>1.6</maven.gpg.plugin>
         <maven.javadoc.plugin>3.1.0</maven.javadoc.plugin>
-        <nexus.staging.maven.plugin>1.6.8</nexus.staging.maven.plugin>
     </properties>
     <dependencyManagement>
 
