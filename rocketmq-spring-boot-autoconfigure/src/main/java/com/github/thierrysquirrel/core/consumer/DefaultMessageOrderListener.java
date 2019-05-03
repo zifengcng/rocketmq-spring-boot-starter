@@ -42,6 +42,7 @@ public class DefaultMessageOrderListener extends AbstractRocketListener implemen
 			super.getMethodFactoryExecution().methodExecution(messageBody);
 		} catch (RocketException e) {
 			super.printErrorLog();
+			return OrderAction.Suspend;
 		}
 		return OrderAction.Success;
 	}

@@ -18,11 +18,6 @@ import java.lang.annotation.*;
 @Documented
 public @interface TransactionMessage {
 	/**
-	 * 您在控制台创建的 Group ID
-	 * @return String
-	 */
-	String groupID() default "";
-	/**
 	 * Message 所属的 Topic
 	 * @return String
 	 */

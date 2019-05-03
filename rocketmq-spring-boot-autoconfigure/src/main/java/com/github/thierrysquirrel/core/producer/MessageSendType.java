@@ -20,6 +20,6 @@ public enum  MessageSendType {
 	/**
 	 * 单向发送
 	 */
-	SEND_ONEWAY
+	SEND_ONE_WAY
 
 }

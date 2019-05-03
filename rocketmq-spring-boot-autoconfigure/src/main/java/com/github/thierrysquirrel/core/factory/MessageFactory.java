@@ -1,8 +1,9 @@
 package com.github.thierrysquirrel.core.factory;
 
 import com.aliyun.openservices.ons.api.Message;
+import com.github.thierrysquirrel.annotation.CommonMessage;
 import com.github.thierrysquirrel.annotation.OrderMessage;
-import com.github.thierrysquirrel.annotation.RockerMessage;
+import com.github.thierrysquirrel.annotation.RocketMessage;
 import com.github.thierrysquirrel.annotation.TransactionMessage;
 
 /**
@@ -14,9 +15,9 @@ import com.github.thierrysquirrel.annotation.TransactionMessage;
  * @since JDK 1.8
  */
 public class MessageFactory {
-	public static Message createMessage(RockerMessage rockerMessage,byte[] body){
-		return new Message(rockerMessage.topic(),
-				rockerMessage.tag(),
+	public static Message createMessage(CommonMessage commonMessage, byte[] body){
+		return new Message(commonMessage.topic(),
+				commonMessage.tag(),
 				body);
 	}
 	public static Message createMessage(OrderMessage orderMessage, byte[] body){

@@ -40,6 +40,7 @@ public class DefaultMessageListener extends AbstractRocketListener implements Me
 			super.getMethodFactoryExecution().methodExecution(messageJson);
 		} catch (RocketException e) {
 			super.printErrorLog();
+			return Action.ReconsumeLater;
 		}
 		return Action.CommitMessage;
 	}

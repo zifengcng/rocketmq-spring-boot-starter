@@ -1,39 +1,45 @@
 package com.github.thierrysquirrel.thread;
 
+import com.github.thierrysquirrel.annotation.RocketMessage;
 import com.github.thierrysquirrel.autoconfigure.RocketProperties;
 import lombok.Data;
 
+import java.util.Map;
+
 /**
- * ClassName: AbstractProducerThread  
- * Description:  
- * date: 2019/4/29 21:39 
+ * ClassName: AbstractProducerThread <br/>
+ * Description: <br/>
+ * date: 2019/5/3 14:02<br/>
  *
- * @author ThierrySquirrel
+ * @author Thierry<br />
  * @since JDK 1.8
  */
 @Data
 public abstract class AbstractProducerThread implements Runnable {
-	private Object message;
+	private Map<String, Object> producerConsumer;
+	private RocketMessage rocketMessage;
+	private Object bean;
 	private RocketProperties rocketProperties;
-	private byte[] bytes;
 
-	public AbstractProducerThread(Object message, RocketProperties rocketProperties, byte[] bytes) {
-		this.message = message;
+	public AbstractProducerThread(Map<String, Object> producerConsumer, RocketMessage rocketMessage, Object bean, RocketProperties rocketProperties) {
+		this.producerConsumer = producerConsumer;
+		this.rocketMessage = rocketMessage;
+		this.bean = bean;
 		this.rocketProperties = rocketProperties;
-		this.bytes = bytes;
 	}
 
 	/**
-	 * 开始发送消息
-	 * @param message message
+	 * 开始向容器装填
+	 *
+	 * @param producerConsumer producerConsumer
+	 * @param rocketMessage    rocketMessage
+	 * @param bean             bean
 	 * @param rocketProperties rocketProperties
-	 * @param bytes bytes
 	 */
-	protected abstract  void  statsSendMessage(Object message, RocketProperties rocketProperties, byte[] bytes);
+	protected abstract void statsPutProducer(Map<String, Object> producerConsumer, RocketMessage rocketMessage, Object bean, RocketProperties rocketProperties);
+
 	@Override
 	public void run() {
-		statsSendMessage(this.getMessage(),
-				this.getRocketProperties(),
-				this.getBytes());
+		statsPutProducer(producerConsumer, rocketMessage, bean, rocketProperties);
 	}
 }

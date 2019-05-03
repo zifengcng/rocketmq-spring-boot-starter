@@ -1,36 +1,36 @@
 package com.github.thierrysquirrel.core.factory.execution;
 
-
+import com.github.thierrysquirrel.annotation.RocketMessage;
 import com.github.thierrysquirrel.autoconfigure.RocketProperties;
-import com.github.thierrysquirrel.core.strategy.ProducerStrategy;
+import com.github.thierrysquirrel.core.strategy.PutProducerStrategy;
 import com.github.thierrysquirrel.thread.AbstractProducerThread;
 
+import java.util.Map;
 
 /**
- * ClassName: ProducerFactoryExecution  
- * Description:  
- * date: 2019/4/28 21:31 
+ * ClassName: ProducerFactoryExecution <br/>
+ * Description: <br/>
+ * date: 2019/5/3 13:25<br/>
  *
- * @author ThierrySquirrel
+ * @author Thierry<br />
  * @since JDK 1.8
  */
 public class ProducerFactoryExecution extends AbstractProducerThread {
 
-
-	public ProducerFactoryExecution(Object message, RocketProperties rocketProperties, byte[] bytes) {
-		super(message, rocketProperties, bytes);
+	public ProducerFactoryExecution(Map<String, Object> producerConsumer, RocketMessage rocketMessage, Object bean, RocketProperties rocketProperties) {
+		super(producerConsumer, rocketMessage, bean, rocketProperties);
 	}
 
 	/**
-	 * 开始发送消息
+	 * 开始向容器装填
 	 *
-	 * @param message          message
+	 * @param producerConsumer producerConsumer
+	 * @param rocketMessage    rocketMessage
+	 * @param bean             bean
 	 * @param rocketProperties rocketProperties
-	 * @param bytes            bytes
 	 */
 	@Override
-	protected void statsSendMessage(Object message, RocketProperties rocketProperties, byte[] bytes) {
-		ProducerStrategy.statsSendMessage(message, rocketProperties, bytes);
+	protected void statsPutProducer(Map<String, Object> producerConsumer, RocketMessage rocketMessage, Object bean, RocketProperties rocketProperties) {
+		PutProducerStrategy.putProducer(producerConsumer,rocketMessage,bean,rocketProperties);
 	}
 }
-

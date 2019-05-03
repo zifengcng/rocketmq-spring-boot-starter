@@ -9,9 +9,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * ClassName: ThreadPoolFactory  
- * Description:  
- * date: 2019/4/27 19:52 
+ * ClassName: ThreadPoolFactory
+ * Description:
+ * date: 2019/4/27 19:52
  *
  * @author ThierrySquirrel
  * @since JDK 1.8
@@ -38,8 +38,40 @@ public class ThreadPoolFactory {
 		Integer threadNums = rocketProperties.getCreateProducerThreadNums();
 
 		ThreadFactory threadFactory = new ThreadFactoryBuilder()
+				.setNameFormat("InitializeProducer").build();
+
+		return new ThreadPoolExecutor(threadNums,
+				threadNums,
+				0,
+				TimeUnit.SECONDS,
+				new LinkedBlockingQueue<>(1024),
+				threadFactory,
+				new ThreadPoolExecutor.AbortPolicy()
+		);
+	}
+
+	public static ThreadPoolExecutor createSendMessageThreadPoolExecutor(RocketProperties rocketProperties) {
+
+		Integer threadNums = rocketProperties.getSendMessageThreadNums();
+
+		ThreadFactory threadFactory = new ThreadFactoryBuilder()
 				.setNameFormat("SendMessage").build();
 
+		return new ThreadPoolExecutor(threadNums,
+				threadNums,
+				0,
+				TimeUnit.SECONDS,
+				new LinkedBlockingQueue<>(4096),
+				threadFactory,
+				new ThreadPoolExecutor.AbortPolicy()
+		);
+	}
+	public static ThreadPoolExecutor createCallbackThreadPoolExecutor(RocketProperties rocketProperties) {
+
+		Integer threadNums = rocketProperties.getCallbackThreadNums();
+
+		ThreadFactory threadFactory = new ThreadFactoryBuilder()
+				.setNameFormat("callback").build();
 		return new ThreadPoolExecutor(threadNums,
 				threadNums,
 				0,
