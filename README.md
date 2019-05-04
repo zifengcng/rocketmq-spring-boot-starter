@@ -23,7 +23,7 @@ To achieve the purpose of delay or timing.
 ## Quick Start
 
 ```xml
-<!--在pom.xml中添加依赖-->
+<!--Adding dependencies to pom. XML-->
         <dependency>
             <artifactId>rocketmq-spring-boot-starter</artifactId>
             <groupId>com.github.thierrysquirrel</groupId>
