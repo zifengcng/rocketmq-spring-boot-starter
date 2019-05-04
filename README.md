@@ -1,22 +1,23 @@
 # rocketmq-spring-boot-starter
 
-阿里云RocketMQ   SpringBoot 版
+AliYun RocketMQ Spring Book Edition
 
 [中文](./README_zh_CN.md)
 
-支持功能：
-- [x] 普通消息三种发送方式：同步，异步，单向
-- [x] 订阅消息集群,广播
-- [x] 收发顺序消息
-- [x] 收发事务消息
-- [x] 收发延迟消息
-- [x] 收发定时消息
+Support function:
 
-# 提示：
- 收发延时消息与定时消息：
- 在官方例子中，延时消息与定时消息大同小异，本质上都为普通消息
- 如果需要延时消息，与定时消息，建议使用定时任务（定时任务调度平台）
- 达到延时或定时的目的。
+- [x] Three modes of sending ordinary messages: synchronous, asynchronous and one-way
+- [x] Subscribe to Message Cluster, Broadcast
+- [x] Send and receive sequential messages
+- [x] Transaction messages
+- [x] Delay message
+- [x] receive and receive timing messages
+
+#Tips:
+Delay message and timing message:
+In the official case, delayed news is much the same as regular news, essentially ordinary news.
+If delay message and timing message are needed, it is recommended to use timing task (timing task scheduling platform)
+To achieve the purpose of delay or timing.
 
 
 ## Quick Start
@@ -29,15 +30,16 @@
             <version>2.0.0-RELEASE</version>
         </dependency>
 ```
- ### 配置文件
+ ### configuration file
+     
  
  ```properties
  ## application.properties
-thierrysquirrel.access-key= #您在阿里云账号管理控制台中创建的 AccessKey，用于身份认证
-thierrysquirrel.secret-key= #您在阿里云账号管理控制台中创建的 SecretKey，用于身份认证
-thierrysquirrel.name-srv-addr= #设置 TCP 协议接入点，从控制台获取
+thierrysquirrel.access-key= #The Access Key you created in the AliYun Account Management Console for authentication
+thierrysquirrel.secret-key= #The SecretKey you created in the AliYun Account Management Console for authentication
+thierrysquirrel.name-srv-addr= #Set up TCP protocol access point and get it from console
  ```
-# 启动RocketMQ
+# Start RocketMQ
 ```java
 @SpringBootApplication
 @EnableRocketMQ
@@ -48,7 +50,7 @@ public class DemoApplication{
    
 }
 ```
-#发送普通消息三种方式
+# Three Ways to Send Common Messages
 
 ```java
 @RestController
@@ -72,7 +74,7 @@ public class Common {
 	}
 }
 ```
-#发送顺序消息
+# Send sequential messages
 ```java
 @RestController
 @RocketMessage(groupID = "GID_order")
@@ -84,7 +86,7 @@ public class Order {
 	}
 }
 ```
-#发送事务消息
+# Send Transaction Messages
 ```java
 @RestController
 @RocketMessage(groupID = "GID_transaction")
@@ -96,7 +98,7 @@ public class Transaction {
 	}
 }
 ```
-#发送延时消息或定时消息
+#Delay message or timing message
 ```java
 @RestController
 @RocketMessage(groupID = "GID_delayed")
@@ -108,7 +110,7 @@ public class Delayed {
 	}
 }
 ```
-#订阅普通、事务、延时、定时消息
+#Subscribe to regular, transactional, delayed, timed messages
 ```java
 @RocketListener(groupID = "GID_message")
 public class Delayed {
@@ -118,7 +120,7 @@ public class Delayed {
     }
 }
 ```
-#订阅顺序消息
+#Subscription order message
 ```java
 @RocketListener(groupID = "GID_message")
 public class Delayed {
