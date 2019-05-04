@@ -7,11 +7,11 @@ import lombok.Data;
 import java.util.Map;
 
 /**
- * ClassName: AbstractProducerThread <br/>
- * Description: <br/>
- * date: 2019/5/3 14:02<br/>
+ * ClassName: AbstractProducerThread
+ * Description:
+ * date: 2019/5/3 14:02
  *
- * @author Thierry<br />
+ * @author Thierry
  * @since JDK 1.8
  */
 @Data

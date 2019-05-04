@@ -6,11 +6,11 @@ import java.lang.annotation.*;
 import java.util.concurrent.TimeUnit;
 
 /**
- * ClassName: CommonMessage <br/>
- * Description: <br/>
- * date: 2019/5/3 11:16<br/>
+ * ClassName: CommonMessage
+ * Description:
+ * date: 2019/5/3 11:16
  *
- * @author Thierry<br />
+ * @author Thierry
  * @since JDK 1.8
  */
 @Target(ElementType.METHOD)

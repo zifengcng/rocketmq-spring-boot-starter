@@ -1,10 +1,8 @@
 package com.github.thierrysquirrel.annotation;
 
-import com.github.thierrysquirrel.core.producer.MessageSendType;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.*;
-import java.util.concurrent.TimeUnit;
 
 /**
  * ClassName: RocketMessage

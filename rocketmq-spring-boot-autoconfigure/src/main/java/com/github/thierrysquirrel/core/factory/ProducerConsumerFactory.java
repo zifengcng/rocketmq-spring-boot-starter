@@ -12,11 +12,11 @@ import com.github.thierrysquirrel.error.RocketException;
 import java.util.Map;
 
 /**
- * ClassName: ProducerConsumerFactory <br/>
- * Description: <br/>
- * date: 2019/5/3 13:45<br/>
+ * ClassName: ProducerConsumerFactory
+ * Description:
+ * date: 2019/5/3 13:45
  *
- * @author Thierry<br />
+ * @author Thierry
  * @since JDK 1.8
  */
 public class ProducerConsumerFactory {

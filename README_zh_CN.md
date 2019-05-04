@@ -2,7 +2,7 @@
 
 阿里云RocketMQ   SpringBoot 版
 
-[中文](./README_zh_CN.md)
+[English](./README.md)
 
 支持功能：
 - [x] 普通消息三种发送方式：同步，异步，单向

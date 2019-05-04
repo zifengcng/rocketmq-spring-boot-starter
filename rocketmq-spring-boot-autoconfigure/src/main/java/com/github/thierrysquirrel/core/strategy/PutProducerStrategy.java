@@ -17,11 +17,11 @@ import java.util.Map;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * ClassName: PutProducerStrategy <br/>
- * Description: <br/>
- * date: 2019/5/3 18:37<br/>
+ * ClassName: PutProducerStrategy
+ * Description:
+ * date: 2019/5/3 18:37
  *
- * @author Thierry<br />
+ * @author Thierry
  * @since JDK 1.8
  */
 public class PutProducerStrategy {

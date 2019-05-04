@@ -8,11 +8,11 @@ import com.github.thierrysquirrel.thread.AbstractProducerThread;
 import java.util.Map;
 
 /**
- * ClassName: ProducerFactoryExecution <br/>
- * Description: <br/>
- * date: 2019/5/3 13:25<br/>
+ * ClassName: ProducerFactoryExecution
+ * Description:
+ * date: 2019/5/3 13:25
  *
- * @author Thierry<br />
+ * @author Thierry
  * @since JDK 1.8
  */
 public class ProducerFactoryExecution extends AbstractProducerThread {

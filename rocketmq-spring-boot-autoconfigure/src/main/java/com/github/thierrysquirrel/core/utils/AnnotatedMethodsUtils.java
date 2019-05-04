@@ -8,11 +8,11 @@ import java.lang.reflect.Method;
 import java.util.Map;
 
 /**
- * ClassName: AnnotatedMethodsUtils <br/>
- * Description: <br/>
- * date: 2019/5/3 11:44<br/>
+ * ClassName: AnnotatedMethodsUtils
+ * Description:
+ * date: 2019/5/3 11:44
  *
- * @author Thierry<br />
+ * @author Thierry
  * @since JDK 1.8
  */
 public class AnnotatedMethodsUtils {
