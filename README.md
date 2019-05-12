@@ -27,7 +27,7 @@ To achieve the purpose of delay or timing.
         <dependency>
             <artifactId>rocketmq-spring-boot-starter</artifactId>
             <groupId>com.github.thierrysquirrel</groupId>
-            <version>2.0.0-RELEASE</version>
+            <version>2.0.1-RELEASE</version>
         </dependency>
 ```
  ### configuration file
