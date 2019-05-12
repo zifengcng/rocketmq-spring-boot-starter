@@ -48,7 +48,7 @@ public class DemoApplication{
    
 }
 ```
-#发送普通消息三种方式
+# 发送普通消息三种方式
 
 ```java
 @RestController
@@ -72,7 +72,7 @@ public class Common {
 	}
 }
 ```
-#发送顺序消息
+# 发送顺序消息
 ```java
 @RestController
 @RocketMessage(groupID = "GID_order")
@@ -84,7 +84,7 @@ public class Order {
 	}
 }
 ```
-#发送事务消息
+# 发送事务消息
 ```java
 @RestController
 @RocketMessage(groupID = "GID_transaction")
@@ -96,7 +96,7 @@ public class Transaction {
 	}
 }
 ```
-#发送延时消息或定时消息
+# 发送延时消息或定时消息
 ```java
 @RestController
 @RocketMessage(groupID = "GID_delayed")
@@ -108,7 +108,7 @@ public class Delayed {
 	}
 }
 ```
-#订阅普通、事务、延时、定时消息
+# 订阅普通、事务、延时、定时消息
 ```java
 @RocketListener(groupID = "GID_message")
 public class Delayed {
@@ -118,7 +118,7 @@ public class Delayed {
     }
 }
 ```
-#订阅顺序消息
+# 订阅顺序消息
 ```java
 @RocketListener(groupID = "GID_message")
 public class Delayed {
