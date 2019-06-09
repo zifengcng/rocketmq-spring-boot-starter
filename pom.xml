@@ -33,6 +33,7 @@
         <maven.gpg.plugin>1.6</maven.gpg.plugin>
         <maven.javadoc.plugin>3.1.0</maven.javadoc.plugin>
     </properties>
+
     <dependencyManagement>
 
         <dependencies>
