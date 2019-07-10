@@ -20,6 +20,9 @@ import java.util.Map;
  * @since JDK 1.8
  */
 public class ProducerConsumerFactory {
+	private ProducerConsumerFactory() {
+	}
+
 	public static String getProducerConsumerKey(RocketMessage rocketMessage, CommonMessage commonMessage) {
 		return rocketMessage.groupID() +
 				commonMessage.topic() +

@@ -6,7 +6,6 @@ import com.aliyun.openservices.ons.api.PropertyKeyConst;
 import com.aliyun.openservices.ons.api.order.OrderProducer;
 import com.aliyun.openservices.ons.api.transaction.LocalTransactionChecker;
 import com.aliyun.openservices.ons.api.transaction.TransactionProducer;
-
 import com.github.thierrysquirrel.annotation.RocketMessage;
 import com.github.thierrysquirrel.autoconfigure.RocketProperties;
 
@@ -21,6 +20,8 @@ import java.util.Properties;
  * @since JDK 1.8
  */
 public class ProducerFactory {
+	private ProducerFactory() {
+	}
 
 	public static Producer createProducer(RocketMessage rocketMessage, RocketProperties rocketProperties) {
 		Properties properties = ProducerPropertiesFactory.createProducerProperties(rocketMessage, rocketProperties);

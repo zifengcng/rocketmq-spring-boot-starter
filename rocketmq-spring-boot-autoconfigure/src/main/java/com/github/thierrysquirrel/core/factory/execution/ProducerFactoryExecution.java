@@ -31,6 +31,6 @@ public class ProducerFactoryExecution extends AbstractProducerThread {
 	 */
 	@Override
 	protected void statsPutProducer(Map<String, Object> producerConsumer, RocketMessage rocketMessage, Object bean, RocketProperties rocketProperties) {
-		PutProducerStrategy.putProducer(producerConsumer,rocketMessage,bean,rocketProperties);
+		PutProducerStrategy.putProducer(producerConsumer, rocketMessage, bean, rocketProperties);
 	}
 }

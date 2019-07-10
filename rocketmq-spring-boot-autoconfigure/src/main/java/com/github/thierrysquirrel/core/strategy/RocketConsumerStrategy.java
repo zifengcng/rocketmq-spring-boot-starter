@@ -22,6 +22,9 @@ import java.util.concurrent.ThreadPoolExecutor;
  */
 
 public class RocketConsumerStrategy {
+	private RocketConsumerStrategy() {
+	}
+
 	public static void putProducer(ThreadPoolExecutor threadPoolExecutor, Map<String, Object> producerConsumer, Object bean, RocketProperties rocketProperties) {
 		RocketMessage rocketMessage = bean.getClass().getAnnotation(RocketMessage.class);
 		AnnotatedMethodsUtils.getMethodAndAnnotation(bean, CommonMessage.class).

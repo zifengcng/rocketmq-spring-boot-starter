@@ -61,7 +61,7 @@ public class RocketProperties {
 	/**
 	 * 异步发送消息执行Callback的目标线程池
 	 */
-	private Integer callbackThreadNums=Runtime.getRuntime().availableProcessors() * 2 + 1;
+	private Integer callbackThreadNums = Runtime.getRuntime().availableProcessors() * 2 + 1;
 	/**
 	 * 初始化消费者线程数，（尽量和消费者数量一致）默认cpu数量*2+1
 	 */

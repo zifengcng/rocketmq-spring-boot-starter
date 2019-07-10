@@ -7,14 +7,17 @@ import com.github.thierrysquirrel.autoconfigure.RocketProperties;
 import java.util.Properties;
 
 /**
- * ClassName: ConsumerPropertiesFactory  
- * Description:  
- * date: 2019/4/27 15:37 
+ * ClassName: ConsumerPropertiesFactory
+ * Description:
+ * date: 2019/4/27 15:37
  *
  * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class ConsumerPropertiesFactory {
+	private ConsumerPropertiesFactory() {
+	}
+
 	public static Properties createConsumerProperties(RocketProperties rocketProperties,
 	                                                  RocketListener rocketListener) {
 

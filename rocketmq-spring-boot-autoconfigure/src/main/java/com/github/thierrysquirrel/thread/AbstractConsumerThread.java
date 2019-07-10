@@ -7,9 +7,9 @@ import com.github.thierrysquirrel.core.factory.execution.MethodFactoryExecution;
 import lombok.Data;
 
 /**
- * ClassName: AbstractConsumerThread  
- * Description:  
- * date: 2019/4/27 20:03 
+ * ClassName: AbstractConsumerThread
+ * Description:
+ * date: 2019/4/27 20:03
  *
  * @author ThierrySquirrel
  * @since JDK 1.8

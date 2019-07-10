@@ -15,9 +15,9 @@ import com.github.thierrysquirrel.thread.AbstractConsumerThread;
 import java.util.Properties;
 
 /**
- * ClassName: ConsumerFactoryExecution  
- * Description:  
- * date: 2019/4/27 16:05 
+ * ClassName: ConsumerFactoryExecution
+ * Description:
+ * date: 2019/4/27 16:05
  *
  * @author ThierrySquirrel
  * @since JDK 1.8
@@ -31,9 +31,9 @@ public class ConsumerFactoryExecution extends AbstractConsumerThread {
 
 	@Override
 	public void statsConsumer(RocketProperties rocketProperties,
-	                   RocketListener rocketListener,
-	                   MessageListener consumerListener,
-	                   MethodFactoryExecution methodFactoryExecution) {
+	                          RocketListener rocketListener,
+	                          MessageListener consumerListener,
+	                          MethodFactoryExecution methodFactoryExecution) {
 
 		Properties properties = ConsumerPropertiesFactory.createConsumerProperties(rocketProperties, rocketListener);
 		if (consumerListener.orderConsumer()) {

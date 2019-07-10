@@ -4,7 +4,6 @@ import com.github.thierrysquirrel.annotation.RocketMessage;
 import com.github.thierrysquirrel.autoconfigure.RocketProperties;
 import com.github.thierrysquirrel.core.factory.ThreadPoolFactory;
 import com.github.thierrysquirrel.core.strategy.RocketConsumerStrategy;
-import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
@@ -33,14 +32,12 @@ public class RocketProducerContainer implements ApplicationContextAware {
 	@PostConstruct
 	public void initialize() {
 		ThreadPoolExecutor threadPoolExecutor = ThreadPoolFactory.createProducerThreadPoolExecutor(rocketProperties);
-		applicationContext.getBeansWithAnnotation(RocketMessage.class).forEach((beanName, bean) -> {
-			RocketConsumerStrategy.putProducer(threadPoolExecutor,consumerContainer, bean, rocketProperties);
-		});
+		applicationContext.getBeansWithAnnotation(RocketMessage.class).forEach((beanName, bean) -> RocketConsumerStrategy.putProducer(threadPoolExecutor, consumerContainer, bean, rocketProperties));
 	}
 
 
 	@Override
-	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+	public void setApplicationContext(ApplicationContext applicationContext) {
 		this.applicationContext = applicationContext;
 	}
 }

@@ -18,7 +18,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Inherited
-@Import ({RocketAutoConfiguration.class})
+@Import({RocketAutoConfiguration.class})
 public @interface EnableRocketMQ {
 
 }

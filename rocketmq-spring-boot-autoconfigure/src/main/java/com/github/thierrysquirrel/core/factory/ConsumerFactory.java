@@ -8,14 +8,16 @@ import java.util.Properties;
 
 
 /**
- * ClassName: ConsumerFactory  
- * Description:  
- * date: 2019/4/27 15:55 
+ * ClassName: ConsumerFactory
+ * Description:
+ * date: 2019/4/27 15:55
  *
  * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class ConsumerFactory {
+	private ConsumerFactory() {
+	}
 
 	public static Consumer createConsumer(Properties properties) {
 		return ONSFactory.createConsumer(properties);

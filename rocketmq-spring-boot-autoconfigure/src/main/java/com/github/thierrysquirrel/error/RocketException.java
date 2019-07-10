@@ -1,9 +1,9 @@
 package com.github.thierrysquirrel.error;
 
 /**
- * ClassName: RocketException  
- * Description:  
- * date: 2019/4/27 16:44 
+ * ClassName: RocketException
+ * Description:
+ * date: 2019/4/27 16:44
  *
  * @author ThierrySquirrel
  * @since JDK 1.8

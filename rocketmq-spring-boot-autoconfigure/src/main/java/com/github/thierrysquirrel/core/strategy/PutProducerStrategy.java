@@ -25,6 +25,9 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @since JDK 1.8
  */
 public class PutProducerStrategy {
+	private PutProducerStrategy() {
+	}
+
 	public static void putProducer(Map<String, Object> producerConsumer, RocketMessage rocketMessage, Object bean, RocketProperties rocketProperties) {
 		if (bean instanceof CommonMessage) {
 			CommonMessage commonMessage = (CommonMessage) bean;

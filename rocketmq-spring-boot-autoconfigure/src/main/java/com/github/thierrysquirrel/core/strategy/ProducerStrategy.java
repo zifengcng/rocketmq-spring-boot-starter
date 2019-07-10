@@ -7,7 +7,6 @@ import com.github.thierrysquirrel.annotation.CommonMessage;
 import com.github.thierrysquirrel.annotation.OrderMessage;
 import com.github.thierrysquirrel.annotation.RocketMessage;
 import com.github.thierrysquirrel.annotation.TransactionMessage;
-import com.github.thierrysquirrel.autoconfigure.RocketProperties;
 import com.github.thierrysquirrel.core.factory.ProducerConsumerFactory;
 import com.github.thierrysquirrel.core.factory.SendMessageFactory;
 import com.github.thierrysquirrel.error.RocketException;
@@ -23,23 +22,26 @@ import java.util.Map;
  * @since JDK 1.8
  */
 public class ProducerStrategy {
-	public static void statsSendMessage(Map<String, Object> consumerContainer, RocketMessage rocketMessage, Object message, RocketProperties rocketProperties, byte[] bytes) throws RocketException {
+	private ProducerStrategy() {
+	}
+
+	public static void statsSendMessage(Map<String, Object> consumerContainer, RocketMessage rocketMessage, Object message, byte[] bytes) throws RocketException {
 		if (message instanceof CommonMessage) {
 			CommonMessage commonMessage = (CommonMessage) message;
 			Producer producer = ProducerConsumerFactory.getProducer(consumerContainer, rocketMessage, commonMessage);
-			SendMessageFactory.sendMessage(producer, commonMessage, rocketProperties, bytes);
+			SendMessageFactory.sendMessage(producer, commonMessage, bytes);
 			return;
 		}
 		if (message instanceof OrderMessage) {
 			OrderMessage orderMessage = (OrderMessage) message;
 			OrderProducer orderProducer = ProducerConsumerFactory.getProducer(consumerContainer, rocketMessage, orderMessage);
-			SendMessageFactory.sendMessage(orderProducer, orderMessage, rocketProperties, bytes);
+			SendMessageFactory.sendMessage(orderProducer, orderMessage, bytes);
 			return;
 		}
 		if (message instanceof TransactionMessage) {
 			TransactionMessage transactionMessage = (TransactionMessage) message;
 			TransactionProducer transactionProducer = ProducerConsumerFactory.getProducer(consumerContainer, rocketMessage, transactionMessage);
-			SendMessageFactory.sendMessage(transactionProducer, transactionMessage, rocketProperties, bytes);
+			SendMessageFactory.sendMessage(transactionProducer, transactionMessage, bytes);
 		}
 	}
 }

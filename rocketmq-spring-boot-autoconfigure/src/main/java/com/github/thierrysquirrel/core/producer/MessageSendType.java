@@ -1,14 +1,14 @@
 package com.github.thierrysquirrel.core.producer;
 
 /**
- * ClassName: MessageSendType  
- * Description:  
- * date: 2019/4/28 21:02 
+ * ClassName: MessageSendType
+ * Description:
+ * date: 2019/4/28 21:02
  *
  * @author ThierrySquirrel
  * @since JDK 1.8
  */
-public enum  MessageSendType {
+public enum MessageSendType {
 	/**
 	 * 同步发送
 	 */

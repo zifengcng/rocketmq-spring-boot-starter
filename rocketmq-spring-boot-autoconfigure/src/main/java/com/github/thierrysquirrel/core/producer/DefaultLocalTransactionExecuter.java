@@ -6,9 +6,9 @@ import com.aliyun.openservices.ons.api.transaction.TransactionStatus;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * ClassName: DefaultLocalTransactionExecuter  
- * Description:  
- * date: 2019/4/28 22:28 
+ * ClassName: DefaultLocalTransactionExecuter
+ * Description:
+ * date: 2019/4/28 22:28
  *
  * @author ThierrySquirrel
  * @since JDK 1.8

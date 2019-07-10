@@ -4,17 +4,20 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 /**
- * ClassName: JsonUtils  
- * Description:  
- * date: 2019/4/27 16:16 
+ * ClassName: JsonUtils
+ * Description:
+ * date: 2019/4/27 16:16
  *
  * @author ThierrySquirrel
  * @since JDK 1.8
  */
 public class JsonUtils {
-	private static Gson gson=new GsonBuilder ()
-			.setPrettyPrinting ()
-			.create ();
+	private static Gson gson = new GsonBuilder()
+			.setPrettyPrinting()
+			.create();
+
+	private JsonUtils() {
+	}
 
 	/**
 	 * 得到Gson
@@ -37,13 +40,13 @@ public class JsonUtils {
 
 	/**
 	 * Json反序列化为对象
-	 * @param json json
-	 * @param classOfT 对象
-	 * @param <T> 对象
+	 *
+	 * @param json      json
+	 * @param classType 对象
 	 * @return 对象
 	 */
-	public static  <T> T fromJson(String json, Class<T> classOfT){
-		return getGson().fromJson(json,classOfT);
+	public static <T> T fromJson(String json, Class<T> classType) {
+		return getGson().fromJson(json, classType);
 	}
 
 

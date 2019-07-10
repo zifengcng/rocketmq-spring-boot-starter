@@ -6,9 +6,9 @@ import com.aliyun.openservices.ons.api.SendResult;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * ClassName: DefaultSendCallback  
- * Description:  
- * date: 2019/4/29 23:32 
+ * ClassName: DefaultSendCallback
+ * Description:
+ * date: 2019/4/29 23:32
  *
  * @author ThierrySquirrel
  * @since JDK 1.8
@@ -22,7 +22,7 @@ public class DefaultSendCallback implements SendCallback {
 	 */
 	@Override
 	public void onSuccess(SendResult sendResult) {
-		log.info("发送消息成功sendResult{}",sendResult);
+		log.info("发送消息成功sendResult{}", sendResult);
 	}
 
 	/**
@@ -32,6 +32,6 @@ public class DefaultSendCallback implements SendCallback {
 	 */
 	@Override
 	public void onException(OnExceptionContext context) {
-		log.error("发送消息失败context{}",context);
+		log.error("发送消息失败context{}", context);
 	}
 }

@@ -17,6 +17,9 @@ import java.util.concurrent.TimeUnit;
  * @since JDK 1.8
  */
 public class ThreadPoolFactory {
+	private ThreadPoolFactory() {
+	}
+
 	public static ThreadPoolExecutor createConsumeThreadPoolExecutor(RocketProperties rocketProperties) {
 		Integer threadNums = rocketProperties.getCreateConsumeThreadNums();
 
@@ -66,6 +69,7 @@ public class ThreadPoolFactory {
 				new ThreadPoolExecutor.AbortPolicy()
 		);
 	}
+
 	public static ThreadPoolExecutor createCallbackThreadPoolExecutor(RocketProperties rocketProperties) {
 
 		Integer threadNums = rocketProperties.getCallbackThreadNums();

@@ -9,9 +9,9 @@ import com.github.thierrysquirrel.error.RocketException;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * ClassName: DefaultMessageOrderListener  
- * Description:  
- * date: 2019/4/26 23:16 
+ * ClassName: DefaultMessageOrderListener
+ * Description:
+ * date: 2019/4/26 23:16
  *
  * @author ThierrySquirrel
  * @since JDK 1.8
