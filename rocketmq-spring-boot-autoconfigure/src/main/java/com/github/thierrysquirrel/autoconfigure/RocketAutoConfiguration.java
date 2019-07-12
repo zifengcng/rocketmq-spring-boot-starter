@@ -20,8 +20,8 @@ import com.github.thierrysquirrel.annotation.EnableRocketMQ;
 import com.github.thierrysquirrel.aspect.RocketAspect;
 import com.github.thierrysquirrel.container.RocketConsumerContainer;
 import com.github.thierrysquirrel.container.RocketProducerContainer;
-import com.github.thierrysquirrel.core.utils.DefaultJsonHelper;
-import com.github.thierrysquirrel.core.utils.JsonHelper;
+import com.github.thierrysquirrel.core.serializer.GsonSerializer;
+import com.github.thierrysquirrel.core.serializer.MqSerializer;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -50,17 +50,17 @@ public class RocketAutoConfiguration {
 	private RocketProperties rocketProperties;
 	@Resource
 	private Map<String, Object> consumerContainer;
-	private final List<JsonHelper> jsonHelpers;
+	private final List<MqSerializer> mqSerializers;
 
-	public RocketAutoConfiguration(List<JsonHelper> jsonHelpers) {
-		this.jsonHelpers = jsonHelpers;
+	public RocketAutoConfiguration(List<MqSerializer> mqSerializers) {
+		this.mqSerializers = mqSerializers;
 	}
 
 	@Bean
 	@ConditionalOnMissingBean(RocketConsumerContainer.class)
 	public RocketConsumerContainer rocketConsumerContainer() {
-		JsonHelper jsonHelper = (jsonHelpers==null||jsonHelpers.size()==0)?new DefaultJsonHelper():jsonHelpers.get(0);
-		return new RocketConsumerContainer(rocketProperties,jsonHelper);
+		MqSerializer mqSerializer = (mqSerializers == null || mqSerializers.size() == 0) ? new GsonSerializer() : mqSerializers.get(0);
+		return new RocketConsumerContainer(rocketProperties, mqSerializer);
 	}
 
 	@Bean

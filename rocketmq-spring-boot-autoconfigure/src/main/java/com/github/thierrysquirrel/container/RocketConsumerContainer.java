@@ -23,8 +23,8 @@ import com.github.thierrysquirrel.core.factory.ThreadPoolFactory;
 import com.github.thierrysquirrel.core.factory.execution.ConsumerFactoryExecution;
 import com.github.thierrysquirrel.core.factory.execution.MethodFactoryExecution;
 import com.github.thierrysquirrel.core.factory.execution.ThreadPoolExecutorExecution;
+import com.github.thierrysquirrel.core.serializer.MqSerializer;
 import com.github.thierrysquirrel.core.utils.AnnotatedMethodsUtils;
-import com.github.thierrysquirrel.core.utils.JsonHelper;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
@@ -43,10 +43,10 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class RocketConsumerContainer implements ApplicationContextAware {
 	private ApplicationContext applicationContext;
 	private RocketProperties rocketProperties;
-	private JsonHelper jsonHelper;
-	public RocketConsumerContainer(RocketProperties rocketProperties, JsonHelper jsonHelper) {
+	private MqSerializer mqSerializer;
+	public RocketConsumerContainer(RocketProperties rocketProperties, MqSerializer mqSerializer) {
 		this.rocketProperties = rocketProperties;
-		this.jsonHelper = jsonHelper;
+		this.mqSerializer = mqSerializer;
 	}
 
 	@PostConstruct
@@ -61,7 +61,7 @@ public class RocketConsumerContainer implements ApplicationContextAware {
 			AnnotatedMethodsUtils.getMethodAndAnnotation(bean, MessageListener.class).
 					forEach((method, consumerListener) -> {
 						ConsumerFactoryExecution consumerFactoryExecution = new ConsumerFactoryExecution(rocketProperties,
-								rocketListener, consumerListener, new MethodFactoryExecution(bean, method, jsonHelper));
+								rocketListener, consumerListener, new MethodFactoryExecution(bean, method, mqSerializer));
 						ThreadPoolExecutorExecution.statsThread(threadPoolExecutor, consumerFactoryExecution);
 					});
 		});

@@ -183,13 +183,19 @@ public class MyTransactionChecker implements LocalTransactionChecker {
     }
 }
 ```
-## Custom json resolver
+## Custom MqSerializer
 ```java
 @Component
-public class Jacksonlmpl<T> implements JsonHelper<T> {
+public class JacksonSerializer implements MqSerializer {
 	private static ObjectMapper objectMapper = new ObjectMapper();
-    
-    //omit
+    @Override
+    public byte[] serialize(Object obj) {
+        //omit
+    }
+    @Override
+    public Object deserialize(byte[] bytes, Class<?> clazz) {
+        //omit
+    }
 }
 ```
 
