@@ -20,6 +20,8 @@ import com.github.thierrysquirrel.annotation.EnableRocketMQ;
 import com.github.thierrysquirrel.aspect.RocketAspect;
 import com.github.thierrysquirrel.container.RocketConsumerContainer;
 import com.github.thierrysquirrel.container.RocketProducerContainer;
+import com.github.thierrysquirrel.core.utils.DefaultJsonHelper;
+import com.github.thierrysquirrel.core.utils.JsonHelper;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -27,6 +29,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -47,11 +50,17 @@ public class RocketAutoConfiguration {
 	private RocketProperties rocketProperties;
 	@Resource
 	private Map<String, Object> consumerContainer;
+	private final List<JsonHelper> jsonHelpers;
+
+	public RocketAutoConfiguration(List<JsonHelper> jsonHelpers) {
+		this.jsonHelpers = jsonHelpers;
+	}
 
 	@Bean
 	@ConditionalOnMissingBean(RocketConsumerContainer.class)
 	public RocketConsumerContainer rocketConsumerContainer() {
-		return new RocketConsumerContainer(rocketProperties);
+		JsonHelper jsonHelper = (jsonHelpers==null||jsonHelpers.size()==0)?new DefaultJsonHelper():jsonHelpers.get(0);
+		return new RocketConsumerContainer(rocketProperties,jsonHelper);
 	}
 
 	@Bean

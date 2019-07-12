@@ -68,21 +68,21 @@ public class DemoApplication{
 @RocketMessage(groupID = "GID_common")
 public class Common {
 
-	@GetMapping("/commonA")
-	@CommonMessage(topic = "commonA", tag = "commonA",messageSendType = MessageSendType.SEND)
-	public String h() {
-		return "commonA";
-	}
-	@GetMapping("/commonB")
-	@CommonMessage(topic = "commonB", tag = "commonB",messageSendType = MessageSendType.SEND_ASYNC)
-	public String hh() {
-		return "commonB";
-	}
-	@GetMapping("/commonC")
-	@CommonMessage(topic = "commonC", tag = "commonC",messageSendType = MessageSendType.SEND_ONE_WAY)
-	public String hhh() {
-		return "commonC";
-	}
+    @GetMapping("/commonA")
+    @CommonMessage(topic = "commonA", tag = "commonA",messageSendType = MessageSendType.SEND)
+    public String sendCommonMsg() {
+        return "commonA";
+    }
+    @GetMapping("/commonB")
+    @CommonMessage(topic = "commonB", tag = "commonB",messageSendType = MessageSendType.SEND_ASYNC)
+    public String sendAsyncMsg() {
+        return "commonB";
+    }
+    @GetMapping("/commonC")
+    @CommonMessage(topic = "commonC", tag = "commonC",messageSendType = MessageSendType.SEND_ONE_WAY)
+    public String sendOneWayMessage() {
+        return "commonC";
+    }
 }
 ```
 # 发送顺序消息
@@ -90,11 +90,11 @@ public class Common {
 @RestController
 @RocketMessage(groupID = "GID_order")
 public class Order {
-	@GetMapping("/order")
-	@OrderMessage(topic = "order",tag = "order")
-	public String order() {
-		return "order";
-	}
+    @GetMapping("/order")
+    @OrderMessage(topic = "order",tag = "order")
+    public String order() {
+        return "order";
+    }
 }
 ```
 # 发送事务消息
@@ -102,11 +102,11 @@ public class Order {
 @RestController
 @RocketMessage(groupID = "GID_transaction")
 public class Transaction {
-	@GetMapping("/transaction")
-	@TransactionMessage(topic = "transaction",tag = "transaction")
-	public String transaction() {
-		return "transaction";
-	}
+    @GetMapping("/transaction")
+    @TransactionMessage(topic = "transaction",tag = "transaction")
+    public String transaction() {
+        return "transaction";
+    }
 }
 ```
 # 发送延时消息或定时消息
@@ -114,11 +114,11 @@ public class Transaction {
 @RestController
 @RocketMessage(groupID = "GID_delayed")
 public class Delayed {
-	@GetMapping("/delayed")
-	@CommonMessage(topic = "delayed", tag = "delayed",startDeliverTime = 10)
-	public String delayed() {
-		return "delayed";
-	}
+    @GetMapping("/delayed")
+    @CommonMessage(topic = "delayed", tag = "delayed",startDeliverTime = 10)
+    public String delayed() {
+        return "delayed";
+    }
 }
 ```
 # 订阅普通、事务、延时、定时消息
@@ -127,7 +127,7 @@ public class Delayed {
 ```java
 @RocketListener(groupID = "GID_message",messageModel = PropertyValueConst.CLUSTERING)
 public class Delayed {
-    @MessageListener(topic = "message",tag = "message")	
+    @MessageListener(topic = "message",tag = "message")    
     public void delayed(String message) {
             System.out.println("message");
     }
@@ -149,25 +149,25 @@ public class Delayed {
 ```java
     @Component
     public class MySendCallback implements SendCallback {
-    	@Override
-    	public void onSuccess(SendResult sendResult) {
-    		System.out.println("发送消息成功");
-    	}
-    	@Override
-    	public void onException(OnExceptionContext context) {
-    		System.out.println("发送消息失败");
-    	}
+        @Override
+        public void onSuccess(SendResult sendResult) {
+            System.out.println("发送消息成功");
+        }
+        @Override
+        public void onException(OnExceptionContext context) {
+            System.out.println("发送消息失败");
+        }
     }
 ```
 ## 自定义本地事务是否执行
 ```java
 @Component
 public class MyTransactionExecuter implements LocalTransactionExecuter {
-	@Override
-	public TransactionStatus execute(Message msg, Object arg) {
-		System.out.println("执行本地事务");
-		return TransactionStatus.CommitTransaction;
-	}
+    @Override
+    public TransactionStatus execute(Message msg, Object arg) {
+        System.out.println("执行本地事务");
+        return TransactionStatus.CommitTransaction;
+    }
 }
 ```
 
@@ -175,11 +175,21 @@ public class MyTransactionExecuter implements LocalTransactionExecuter {
 ```java
 @Component
 public class MyTransactionChecker implements LocalTransactionChecker {
-	@Override
-	public TransactionStatus check(Message msg) {
-		System.out.println("回查本地事务");
-		return TransactionStatus.CommitTransaction;
-	}
+    @Override
+    public TransactionStatus check(Message msg) {
+        System.out.println("回查本地事务");
+        return TransactionStatus.CommitTransaction;
+    }
+}
+```
+
+## 自定义Json解析器
+```java
+@Component
+public class Jacksonlmpl<T> implements JsonHelper<T> {
+	private static ObjectMapper objectMapper = new ObjectMapper();
+    
+    //略
 }
 ```
 # 开发者自定义局部模块

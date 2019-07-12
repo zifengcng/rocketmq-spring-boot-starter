@@ -24,6 +24,7 @@ package com.github.thierrysquirrel.core.utils;
  * @author ThierrySquirrel
  * @since JDK 1.8
  */
+@Deprecated
 public class ByteUtils {
 	private ByteUtils() {
 	}

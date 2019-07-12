@@ -70,21 +70,21 @@ public class DemoApplication{
 @RocketMessage(groupID = "GID_common")
 public class Common {
 
-	@GetMapping("/commonA")
-	@CommonMessage(topic = "commonA", tag = "commonA",messageSendType = MessageSendType.SEND)
-	public String h() {
-		return "commonA";
-	}
-	@GetMapping("/commonB")
-	@CommonMessage(topic = "commonB", tag = "commonB",messageSendType = MessageSendType.SEND_ASYNC)
-	public String hh() {
-		return "commonB";
-	}
-	@GetMapping("/commonC")
-	@CommonMessage(topic = "commonC", tag = "commonC",messageSendType = MessageSendType.SEND_ONE_WAY)
-	public String hhh() {
-		return "commonC";
-	}
+    @GetMapping("/commonA")
+    @CommonMessage(topic = "commonA", tag = "commonA",messageSendType = MessageSendType.SEND)
+    public String sendCommonMsg() {
+        return "commonA";
+    }
+    @GetMapping("/commonB")
+    @CommonMessage(topic = "commonB", tag = "commonB",messageSendType = MessageSendType.SEND_ASYNC)
+    public String sendAsyncMsg() {
+        return "commonB";
+    }
+    @GetMapping("/commonC")
+    @CommonMessage(topic = "commonC", tag = "commonC",messageSendType = MessageSendType.SEND_ONE_WAY)
+    public String sendOneWayMessage() {
+        return "commonC";
+    }
 }
 ```
 # Send sequential messages
@@ -92,11 +92,11 @@ public class Common {
 @RestController
 @RocketMessage(groupID = "GID_order")
 public class Order {
-	@GetMapping("/order")
-	@OrderMessage(topic = "order",tag = "order")
-	public String order() {
-		return "order";
-	}
+    @GetMapping("/order")
+    @OrderMessage(topic = "order",tag = "order")
+    public String order() {
+        return "order";
+    }
 }
 ```
 # Send Transaction Messages
@@ -104,11 +104,11 @@ public class Order {
 @RestController
 @RocketMessage(groupID = "GID_transaction")
 public class Transaction {
-	@GetMapping("/transaction")
-	@TransactionMessage(topic = "transaction",tag = "transaction")
-	public String transaction() {
-		return "transaction";
-	}
+    @GetMapping("/transaction")
+    @TransactionMessage(topic = "transaction",tag = "transaction")
+    public String transaction() {
+        return "transaction";
+    }
 }
 ```
 # Delay message or timing message
@@ -116,11 +116,11 @@ public class Transaction {
 @RestController
 @RocketMessage(groupID = "GID_delayed")
 public class Delayed {
-	@GetMapping("/delayed")
-	@CommonMessage(topic = "delayed", tag = "delayed",startDeliverTime = 10)
-	public String delayed() {
-		return "delayed";
-	}
+    @GetMapping("/delayed")
+    @CommonMessage(topic = "delayed", tag = "delayed",startDeliverTime = 10)
+    public String delayed() {
+        return "delayed";
+    }
 }
 ```
 # Subscribe to regular, transactional, delayed, timed messages
@@ -128,9 +128,9 @@ Monitor messages using messageModel to control cluster or broadcast consumption 
 ```java
 @RocketListener(groupID = "GID_message",messageModel = PropertyValueConst.CLUSTERING)
 public class Delayed {
-    @MessageListener(topic = "message",tag = "message")	
+    @MessageListener(topic = "message",tag = "message")    
     public void delayed(String message) {
-    	System.out.println("message");
+        System.out.println("message");
     }
 }
 ```
@@ -150,25 +150,25 @@ public class Delayed {
 ```java
     @Component
     public class MySendCallback implements SendCallback {
-    	@Override
-    	public void onSuccess(SendResult sendResult) {
-    		System.out.println("Successful sending of message");
-    	}
-    	@Override
-    	public void onException(OnExceptionContext context) {
-    		System.out.println("Failed to send message");
-    	}
+        @Override
+        public void onSuccess(SendResult sendResult) {
+            System.out.println("Successful sending of message");
+        }
+        @Override
+        public void onException(OnExceptionContext context) {
+            System.out.println("Failed to send message");
+        }
     }
 ```
 ## Customize whether local transactions are executed
 ```java
 @Component
 public class MyTransactionExecuter implements LocalTransactionExecuter {
-	@Override
-	public TransactionStatus execute(Message msg, Object arg) {
-		System.out.println("Executing local affairs");
-		return TransactionStatus.CommitTransaction;
-	}
+    @Override
+    public TransactionStatus execute(Message msg, Object arg) {
+        System.out.println("Executing local affairs");
+        return TransactionStatus.CommitTransaction;
+    }
 }
 ```
 
@@ -176,11 +176,20 @@ public class MyTransactionExecuter implements LocalTransactionExecuter {
 ```java
 @Component
 public class MyTransactionChecker implements LocalTransactionChecker {
-	@Override
-	public TransactionStatus check(Message msg) {
-		System.out.println("Review of local transactions");
-		return TransactionStatus.CommitTransaction;
-	}
+    @Override
+    public TransactionStatus check(Message msg) {
+        System.out.println("Review of local transactions");
+        return TransactionStatus.CommitTransaction;
+    }
+}
+```
+## Custom json resolver
+```java
+@Component
+public class Jacksonlmpl<T> implements JsonHelper<T> {
+	private static ObjectMapper objectMapper = new ObjectMapper();
+    
+    //omit
 }
 ```
 
