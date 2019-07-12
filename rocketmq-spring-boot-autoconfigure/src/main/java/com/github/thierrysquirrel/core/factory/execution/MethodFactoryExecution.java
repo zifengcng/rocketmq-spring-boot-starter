@@ -17,7 +17,7 @@
 package com.github.thierrysquirrel.core.factory.execution;
 
 import com.github.thierrysquirrel.core.factory.MethodFactory;
-import com.github.thierrysquirrel.core.utils.JsonUtils;
+import com.github.thierrysquirrel.core.utils.JsonHelper;
 import com.github.thierrysquirrel.error.RocketException;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -37,17 +37,17 @@ import java.lang.reflect.Method;
 public class MethodFactoryExecution {
 	private Object bean;
 	private Method method;
+	private JsonHelper jsonHelper;
 
-	public MethodFactoryExecution(Object bean, Method method) {
+	public MethodFactoryExecution(Object bean, Method method, JsonHelper jsonHelper) {
 		this.bean = bean;
 		this.method = method;
+		this.jsonHelper = jsonHelper;
 	}
 
 	public void methodExecution(String messageJson) throws RocketException {
 		Class<?> methodParameter = MethodFactory.getMethodParameter(method);
-
-
-		Object methodParameterBean = JsonUtils.fromJson(messageJson, methodParameter);
+		Object methodParameterBean = jsonHelper.fromJson(messageJson, methodParameter);
 		try {
 			method.invoke(bean, methodParameterBean);
 		} catch (Exception e) {

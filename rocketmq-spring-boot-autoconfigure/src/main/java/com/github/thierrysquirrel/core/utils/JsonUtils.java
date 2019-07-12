@@ -27,6 +27,7 @@ import com.google.gson.GsonBuilder;
  * @author ThierrySquirrel
  * @since JDK 1.8
  */
+@Deprecated
 public class JsonUtils {
 	private static Gson gson = new GsonBuilder()
 			.setPrettyPrinting()

@@ -46,9 +46,10 @@ public class InterceptRocket {
 
 		T annotation = method.getAnnotation(annotationClass);
 		Object proceed = proceedingJoinPoint.proceed();
-
-		byte[] body = ByteUtils.objectToByte(proceed);
-
+		Map<String,JsonHelper> jsonHelperMap = applicationContext.getBeansOfType(JsonHelper.class);
+		JsonHelper[] jsonHelpers = jsonHelperMap.values().toArray(new JsonHelper[jsonHelperMap.size()]);
+		JsonHelper jsonHelper = (jsonHelperMap==null||jsonHelperMap.size()==0)?new DefaultJsonHelper():jsonHelpers[0];
+		byte[] body = jsonHelper.toJson(proceed).getBytes();
 		RocketMessage rocketMessage = method.getDeclaringClass().getAnnotation(RocketMessage.class);
 
 		ThreadPoolExecutorExecution.statsThread(threadPoolExecutor, new SendMessageFactoryExecution(consumerContainer, rocketMessage, annotation, body, applicationContext));
