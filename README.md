@@ -13,13 +13,19 @@ Support function:
 - [x] Delay message
 - [x] receive and receive timing messages
 
-# Tips:
+# Timing message and delay message:
 Delay message and timing message:
 In the official case, delayed news is much the same as regular news, essentially ordinary news.
 If delay message and timing message are needed, it is recommended to use timing task (timing task scheduling platform)
 To achieve the purpose of delay or timing.
 
-
+#Transaction message：
+ In the framework, the operations on transaction messages are simpler and simpler. You can complete the transaction messages by annotations only.
+ Whether transactional messages, distributed transactional solutions or cross-platform language solutions, the core problem of transactional solutions is to ensure that messages can be sent and consumers can consume them.
+ Reliability Guarantee
+ 1.Add @TransactionMessage annotation, kernel guarantee, local transaction error, do not send message, correct execution, send message, that is, default submission.
+ 2.Reliability assurance is adopted by default, and default submission is checked back. The reason comes from the previous factor, which guarantees that local transactions do not go wrong.
+ 
 ## Quick Start
 
 ```xml
@@ -27,7 +33,7 @@ To achieve the purpose of delay or timing.
         <dependency>
             <artifactId>rocketmq-spring-boot-starter</artifactId>
             <groupId>com.github.thierrysquirrel</groupId>
-            <version>2.0.4-RELEASE</version>
+            <version>2.0.5-RELEASE</version>
         </dependency>
 ```
  ### configuration file
@@ -128,5 +134,44 @@ public class Delayed {
     public void delayed(String message) {
             return "message";
     }
+}
+```
+
+# Developer Custom Module
+## Custom Implementation of Message Sending Results
+```java
+    @Component
+    public class MySendCallback implements SendCallback {
+    	@Override
+    	public void onSuccess(SendResult sendResult) {
+    		System.out.println("Successful sending of message");
+    	}
+    	@Override
+    	public void onException(OnExceptionContext context) {
+    		System.out.println("Failed to send message");
+    	}
+    }
+```
+## Customize whether local transactions are executed
+```java
+@Component
+public class MyTransactionExecuter implements LocalTransactionExecuter {
+	@Override
+	public TransactionStatus execute(Message msg, Object arg) {
+		System.out.println("Executing local affairs");
+		return TransactionStatus.CommitTransaction;
+	}
+}
+```
+
+## Custom review of local transactions
+```java
+@Component
+public class MyTransactionChecker implements LocalTransactionChecker {
+	@Override
+	public TransactionStatus check(Message msg) {
+		System.out.println("Review of local transactions");
+		return TransactionStatus.CommitTransaction;
+	}
 }
 ```

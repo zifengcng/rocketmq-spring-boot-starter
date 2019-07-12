@@ -12,13 +12,19 @@
 - [x] 收发延迟消息
 - [x] 收发定时消息
 
-# 提示：
+# 定时消息与延时消息：
  收发延时消息与定时消息：
  在官方例子中，延时消息与定时消息大同小异，本质上都为普通消息
  如果需要延时消息，与定时消息，建议使用定时任务（定时任务调度平台）
  达到延时或定时的目的。
 
-
+#事务消息：
+ 在框架中,在事务消息上的操作更为化繁为简,您只需要通过注解,即可完成事务消息
+ 无论事务消息,分布式事务方案,跨平台语言解决方案,其核心解决事务关键问题,在于确保消息能够发送,确保消费者能够消费
+ 可靠性保障
+ 1.代码块中加入@TransactionMessage注解,内核保障,本地事务出错,不发送消息,正确执行,则发送消息,即为默认提交
+ 2.可靠性保障默认采取,回查默认提交,其原因来自上一条因素,保障本地事务不出错
+ 
 ## Quick Start
 
 ```xml
@@ -26,7 +32,7 @@
         <dependency>
             <artifactId>rocketmq-spring-boot-starter</artifactId>
             <groupId>com.github.thierrysquirrel</groupId>
-            <version>2.0.4-RELEASE</version>
+            <version>2.0.5-RELEASE</version>
         </dependency>
 ```
  ### 配置文件
@@ -126,5 +132,44 @@ public class Delayed {
     public void delayed(String message) {
             return "message";
     }
+}
+
+```
+# 开发者自定义模块
+## 自定义实现消息发送结果
+```java
+    @Component
+    public class MySendCallback implements SendCallback {
+    	@Override
+    	public void onSuccess(SendResult sendResult) {
+    		System.out.println("发送消息成功");
+    	}
+    	@Override
+    	public void onException(OnExceptionContext context) {
+    		System.out.println("发送消息失败");
+    	}
+    }
+```
+## 自定义本地事务是否执行
+```java
+@Component
+public class MyTransactionExecuter implements LocalTransactionExecuter {
+	@Override
+	public TransactionStatus execute(Message msg, Object arg) {
+		System.out.println("执行本地事务");
+		return TransactionStatus.CommitTransaction;
+	}
+}
+```
+
+## 自定义回查本地事务
+```java
+@Component
+public class MyTransactionChecker implements LocalTransactionChecker {
+	@Override
+	public TransactionStatus check(Message msg) {
+		System.out.println("回查本地事务");
+		return TransactionStatus.CommitTransaction;
+	}
 }
 ```

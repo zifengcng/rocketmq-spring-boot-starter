@@ -1,3 +1,19 @@
+/**
+ * Copyright 2019 the original author or authors.
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.github.thierrysquirrel.aspect;
 
 import com.github.thierrysquirrel.annotation.CommonMessage;
@@ -12,6 +28,8 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 import java.util.Map;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -27,10 +45,11 @@ import java.util.concurrent.ThreadPoolExecutor;
 @Aspect
 @Slf4j
 @Data
-public class RocketAspect {
+public class RocketAspect implements ApplicationContextAware {
 	private Map<String, Object> consumerContainer;
 	private RocketProperties rocketProperties;
 	private ThreadPoolExecutor threadPoolExecutor;
+	private ApplicationContext applicationContext;
 
 	public RocketAspect(Map<String, Object> consumerContainer, RocketProperties rocketProperties) {
 		this.consumerContainer = consumerContainer;
@@ -55,16 +74,21 @@ public class RocketAspect {
 
 	@Around("commonMessagePointcut()")
 	public Object rockerMessageSend(ProceedingJoinPoint point) throws Throwable {
-		return InterceptRocket.intercept(point, consumerContainer, threadPoolExecutor, CommonMessage.class);
+		return InterceptRocket.intercept(point, consumerContainer, threadPoolExecutor, CommonMessage.class, applicationContext);
 	}
 
 	@Around("orderMessagePointcut()")
 	public Object orderMessageSend(ProceedingJoinPoint point) throws Throwable {
-		return InterceptRocket.intercept(point, consumerContainer, threadPoolExecutor, OrderMessage.class);
+		return InterceptRocket.intercept(point, consumerContainer, threadPoolExecutor, OrderMessage.class, applicationContext);
 	}
 
 	@Around("transactionMessagePointcut()")
 	public Object transactionMessageSend(ProceedingJoinPoint point) throws Throwable {
-		return InterceptRocket.intercept(point, consumerContainer, threadPoolExecutor, TransactionMessage.class);
+		return InterceptRocket.intercept(point, consumerContainer, threadPoolExecutor, TransactionMessage.class, applicationContext);
+	}
+
+	@Override
+	public void setApplicationContext(ApplicationContext applicationContext) {
+		this.applicationContext = applicationContext;
 	}
 }
