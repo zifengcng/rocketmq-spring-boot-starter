@@ -122,22 +122,24 @@ public class Delayed {
 }
 ```
 # 订阅普通、事务、延时、定时消息
+## 监听消息使用 messageModel 控制集群或广播消费模式
+
 ```java
-@RocketListener(groupID = "GID_message")
+@RocketListener(groupID = "GID_message",messageModel = PropertyValueConst.CLUSTERING)
 public class Delayed {
     @MessageListener(topic = "message",tag = "message")	
     public void delayed(String message) {
-            return "message";
+            System.out.println("message");
     }
 }
 ```
 # 订阅顺序消息
 ```java
-@RocketListener(groupID = "GID_message")
+@RocketListener(groupID = "GID_message",messageModel = PropertyValueConst.BROADCASTING)
 public class Delayed {
     @MessageListener(topic = "message",tag = "message", orderConsumer = true)
     public void delayed(String message) {
-            return "message";
+            System.out.println("message");
     }
 }
 
@@ -181,6 +183,6 @@ public class MyTransactionChecker implements LocalTransactionChecker {
 }
 ```
 # 开发者自定义局部模块
-@CommonMessage callbackBeanName指定bean名称  
+@CommonMessage callback指定class
 
-@TransactionMessage checkerBeanName与executerBeanName 指定bean名称  
+@TransactionMessage checker与executer 指定class
