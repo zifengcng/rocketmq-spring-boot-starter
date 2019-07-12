@@ -183,6 +183,6 @@ public class MyTransactionChecker implements LocalTransactionChecker {
 }
 ```
 # 开发者自定义局部模块
-@CommonMessage callbackBeanName指定bean名称  
+@CommonMessage callback指定class
 
-@TransactionMessage checkerBeanName与executerBeanName 指定bean名称  
+@TransactionMessage checker与executer 指定class

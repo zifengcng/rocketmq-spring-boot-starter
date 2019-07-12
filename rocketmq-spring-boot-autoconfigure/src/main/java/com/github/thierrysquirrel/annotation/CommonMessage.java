@@ -16,6 +16,8 @@
 
 package com.github.thierrysquirrel.annotation;
 
+import com.aliyun.openservices.ons.api.SendCallback;
+import com.github.thierrysquirrel.core.producer.DefaultSendCallback;
 import com.github.thierrysquirrel.core.producer.MessageSendType;
 
 import java.lang.annotation.*;
@@ -74,9 +76,9 @@ public @interface CommonMessage {
 	MessageSendType messageSendType() default MessageSendType.SEND_ASYNC;
 
 	/**
-	 * 自定义SendCallback bean名称
+	 * 自定义SendCallback类
 	 *
-	 * @return callbackBeanName
+	 * @return callback
 	 */
-	String callbackBeanName() default "";
+	Class<? extends SendCallback> callback() default DefaultSendCallback.class;
 }

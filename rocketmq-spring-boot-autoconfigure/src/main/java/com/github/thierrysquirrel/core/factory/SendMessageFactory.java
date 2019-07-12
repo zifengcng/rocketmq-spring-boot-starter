@@ -55,6 +55,6 @@ public class SendMessageFactory {
 
 	public static void sendMessage(TransactionProducer transactionProducer, TransactionMessage transactionMessage, byte[] bytes, ApplicationContext applicationContext) {
 		Message message = MessageFactory.createMessage(transactionMessage, bytes);
-		transactionProducer.send(message, ApplicationContextUtils.getLocalTransactionExecuter(applicationContext, transactionMessage.executerBeanName()), null);
+		transactionProducer.send(message, ApplicationContextUtils.getLocalTransactionExecuter(applicationContext, transactionMessage.executer()), null);
 	}
 }
