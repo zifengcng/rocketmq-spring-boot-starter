@@ -19,7 +19,7 @@ In the official case, delayed news is much the same as regular news, essentially
 If delay message and timing message are needed, it is recommended to use timing task (timing task scheduling platform)
 To achieve the purpose of delay or timing.
 
-#Transaction message：
+# Transaction message：
  In the framework, the operations on transaction messages are simpler and simpler. You can complete the transaction messages by annotations only.
  Whether transactional messages, distributed transactional solutions or cross-platform language solutions, the core problem of transactional solutions is to ensure that messages can be sent and consumers can consume them.
  Reliability Guarantee
