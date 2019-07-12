@@ -184,5 +184,6 @@ public class MyTransactionChecker implements LocalTransactionChecker {
 ```
 
 # Developer-defined Local Modules
-## @CommonMessage callbackBeanName Specify the bean name
-## @TransactionMessage checkerBeanName And executerBeanName Specify the bean name
+@CommonMessage callbackBeanName Specify the bean name  
+
+@TransactionMessage checkerBeanName And executerBeanName Specify the bean name  
