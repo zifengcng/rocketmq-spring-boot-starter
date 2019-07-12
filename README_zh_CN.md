@@ -183,13 +183,19 @@ public class MyTransactionChecker implements LocalTransactionChecker {
 }
 ```
 
-## 自定义Json解析器
+## 自定义 Mq序列化器
 ```java
 @Component
-public class Jacksonlmpl<T> implements JsonHelper<T> {
+public class JacksonSerializer implements MqSerializer {
 	private static ObjectMapper objectMapper = new ObjectMapper();
-    
-    //略
+    @Override
+    public byte[] serialize(Object obj) {
+        //omit
+    }
+    @Override
+    public Object deserialize(byte[] bytes, Class<?> clazz) {
+        //omit
+    }
 }
 ```
 # 开发者自定义局部模块

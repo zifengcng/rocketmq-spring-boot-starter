@@ -14,31 +14,29 @@
  * limitations under the License.
  */
 
-package com.github.thierrysquirrel.core.utils;
+package com.github.thierrysquirrel.core.serializer;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 /**
- * ClassName: JsonHelper
- * Description: json解析接口定义
+ * ClassName: DefaultJsonHelper
+ * Description: json解析器默认实现
  * date: 2019-07-12
  *
  * @author Negi
  * @since 2.0.7
  */
-public interface JsonHelper<T> {
-	/**
-	 * 序列化为Json
-	 *
-	 * @param obj 对象
-	 * @return json
-	 */
-	String toJson(T obj);
+public class GsonSerializer implements MqSerializer {
+    private static Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-	/**
-	 * Json反序列化为对象
-	 *
-	 * @param json      json
-	 * @param classType 对象
-	 * @return 对象
-	 */
-	T fromJson(String json, Class<T> classType);
+    @Override
+    public byte[] serialize(Object obj) {
+        return gson.toJson(obj).getBytes();
+    }
+
+    @Override
+    public Object deserialize(byte[] bytes, Class<?> clazz) {
+        return gson.fromJson(new String(bytes), clazz);
+    }
 }
