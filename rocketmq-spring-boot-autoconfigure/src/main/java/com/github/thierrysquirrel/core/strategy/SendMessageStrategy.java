@@ -42,7 +42,7 @@ public class SendMessageStrategy {
 			return;
 		}
 		if (commonMessage.messageSendType().equals(MessageSendType.SEND_ASYNC)) {
-			producer.sendAsync(message, ApplicationContextUtils.getSendCallback(applicationContext));
+			producer.sendAsync(message, ApplicationContextUtils.getSendCallback(applicationContext, commonMessage.callbackBeanName()));
 			return;
 		}
 		if (commonMessage.messageSendType().equals(MessageSendType.SEND_ONE_WAY)) {

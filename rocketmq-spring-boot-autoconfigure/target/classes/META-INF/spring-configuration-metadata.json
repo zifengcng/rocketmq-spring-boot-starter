@@ -1,0 +1,102 @@
+{
+  "groups": [
+    {
+      "name": "thierrysquirrel",
+      "type": "com.github.thierrysquirrel.autoconfigure.RocketProperties",
+      "sourceType": "com.github.thierrysquirrel.autoconfigure.RocketProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "thierrysquirrel.access-key",
+      "type": "java.lang.String",
+      "description": "您在阿里云账号管理控制台中创建的 AccessKey，用于身份认证",
+      "sourceType": "com.github.thierrysquirrel.autoconfigure.RocketProperties"
+    },
+    {
+      "name": "thierrysquirrel.callback-thread-nums",
+      "type": "java.lang.Integer",
+      "description": "异步发送消息执行Callback的目标线程池",
+      "sourceType": "com.github.thierrysquirrel.autoconfigure.RocketProperties"
+    },
+    {
+      "name": "thierrysquirrel.check-immunity-time-in-seconds",
+      "type": "java.lang.Integer",
+      "description": "设置事务消息第一次回查的最快时间，单位（秒）",
+      "sourceType": "com.github.thierrysquirrel.autoconfigure.RocketProperties",
+      "defaultValue": 5
+    },
+    {
+      "name": "thierrysquirrel.consume-thread-nums",
+      "type": "java.lang.Integer",
+      "description": "设置 RocketMessage 实例的消费线程数，阿里云默认：20 默认cpu数量*2+1",
+      "sourceType": "com.github.thierrysquirrel.autoconfigure.RocketProperties"
+    },
+    {
+      "name": "thierrysquirrel.consume-timeout",
+      "type": "java.lang.Integer",
+      "description": "设置每条消息消费的最大超时时间，超过设置时间则被视为消费失败，等下次重新投递再次消费。 每个业务需要设置一个合理的值，单位（分钟）。 默认：15",
+      "sourceType": "com.github.thierrysquirrel.autoconfigure.RocketProperties",
+      "defaultValue": 15
+    },
+    {
+      "name": "thierrysquirrel.create-consume-thread-nums",
+      "type": "java.lang.Integer",
+      "description": "初始化消费者线程数，（尽量和消费者数量一致）默认cpu数量*2+1",
+      "sourceType": "com.github.thierrysquirrel.autoconfigure.RocketProperties"
+    },
+    {
+      "name": "thierrysquirrel.create-producer-thread-nums",
+      "type": "java.lang.Integer",
+      "description": "初始化生产者线程数，（尽量和生产者数量一致）默认cpu数量*2+1",
+      "sourceType": "com.github.thierrysquirrel.autoconfigure.RocketProperties"
+    },
+    {
+      "name": "thierrysquirrel.max-reconsume-times",
+      "type": "java.lang.Integer",
+      "description": "设置消息消费失败的最大重试次数，默认：16",
+      "sourceType": "com.github.thierrysquirrel.autoconfigure.RocketProperties",
+      "defaultValue": 16
+    },
+    {
+      "name": "thierrysquirrel.name-srv-addr",
+      "type": "java.lang.String",
+      "description": "设置 TCP 协议接入点，从控制台获取",
+      "sourceType": "com.github.thierrysquirrel.autoconfigure.RocketProperties"
+    },
+    {
+      "name": "thierrysquirrel.ons-channel",
+      "type": "java.lang.String",
+      "description": "用户渠道，默认为：ALIYUN，聚石塔用户为：CLOUD",
+      "sourceType": "com.github.thierrysquirrel.autoconfigure.RocketProperties",
+      "defaultValue": "ALIYUN"
+    },
+    {
+      "name": "thierrysquirrel.secret-key",
+      "type": "java.lang.String",
+      "description": "您在阿里云账号管理控制台中创建的 SecretKey，用于身份认证",
+      "sourceType": "com.github.thierrysquirrel.autoconfigure.RocketProperties"
+    },
+    {
+      "name": "thierrysquirrel.send-message-thread-nums",
+      "type": "java.lang.Integer",
+      "description": "生产者发送消息线程数 默认cpu数量*2+1",
+      "sourceType": "com.github.thierrysquirrel.autoconfigure.RocketProperties"
+    },
+    {
+      "name": "thierrysquirrel.send-msg-timeout-millis",
+      "type": "java.lang.Integer",
+      "description": "设置消息发送的超时时间，单位（毫秒），默认：3000",
+      "sourceType": "com.github.thierrysquirrel.autoconfigure.RocketProperties",
+      "defaultValue": 3000
+    },
+    {
+      "name": "thierrysquirrel.suspend-time-milli",
+      "type": "java.lang.Integer",
+      "description": "只适用于顺序消息，设置消息消费失败的重试间隔时间默认100毫秒",
+      "sourceType": "com.github.thierrysquirrel.autoconfigure.RocketProperties",
+      "defaultValue": 100
+    }
+  ],
+  "hints": []
+}

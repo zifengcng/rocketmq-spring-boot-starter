@@ -72,4 +72,11 @@ public @interface CommonMessage {
 	 * @return MessageSendType
 	 */
 	MessageSendType messageSendType() default MessageSendType.SEND_ASYNC;
+
+	/**
+	 * 自定义SendCallback bean名称
+	 *
+	 * @return callbackBeanName
+	 */
+	String callbackBeanName() default "";
 }

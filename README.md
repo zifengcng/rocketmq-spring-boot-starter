@@ -40,7 +40,7 @@ To achieve the purpose of delay or timing.
         <dependency>
             <artifactId>rocketmq-spring-boot-starter</artifactId>
             <groupId>com.github.thierrysquirrel</groupId>
-            <version>2.0.5-RELEASE</version>
+            <version>2.0.6-RELEASE</version>
         </dependency>
 ```
  ### configuration file
@@ -144,7 +144,7 @@ public class Delayed {
 }
 ```
 
-# Developer Custom Module
+# Developer-defined global module
 ## Custom Implementation of Message Sending Results
 ```java
     @Component
@@ -182,3 +182,7 @@ public class MyTransactionChecker implements LocalTransactionChecker {
 	}
 }
 ```
+
+# Developer-defined Local Modules
+## @CommonMessage callbackBeanName Specify the bean name
+## @TransactionMessage checkerBeanName And executerBeanName Specify the bean name

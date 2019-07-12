@@ -58,4 +58,18 @@ public @interface TransactionMessage {
 	 * @return TransactionStatus
 	 */
 	TransactionStatus transactionStatus() default TransactionStatus.CommitTransaction;
+
+	/**
+	 * 自定义LocalTransactionChecker bean名称
+	 *
+	 * @return checkerBeanName
+	 */
+	String checkerBeanName() default "";
+
+	/**
+	 * 自定义LocalTransactionExecuter bean名称
+	 *
+	 * @return executerBeanName
+	 */
+	String executerBeanName() default "";
 }

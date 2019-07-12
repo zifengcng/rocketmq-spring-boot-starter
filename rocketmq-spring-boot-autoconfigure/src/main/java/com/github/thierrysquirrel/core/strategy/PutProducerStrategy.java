@@ -68,7 +68,7 @@ public class PutProducerStrategy {
 		if (bean instanceof TransactionMessage) {
 			TransactionMessage transactionMessage = (TransactionMessage) bean;
 			String producerConsumerKey = ProducerConsumerFactory.getProducerConsumerKey(rocketMessage, transactionMessage);
-			LocalTransactionChecker localTransactionChecker = ApplicationContextUtils.getLocalTransactionChecker(applicationContext, transactionMessage.transactionStatus());
+			LocalTransactionChecker localTransactionChecker = ApplicationContextUtils.getLocalTransactionChecker(applicationContext, transactionMessage.transactionStatus(),transactionMessage.checkerBeanName());
 			TransactionProducer transactionProducer = ProducerFactory.createTransactionProducer(rocketMessage, rocketProperties, localTransactionChecker);
 			transactionProducer.start();
 			producerConsumer.put(producerConsumerKey, transactionProducer);

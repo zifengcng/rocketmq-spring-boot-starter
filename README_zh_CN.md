@@ -39,7 +39,7 @@
         <dependency>
             <artifactId>rocketmq-spring-boot-starter</artifactId>
             <groupId>com.github.thierrysquirrel</groupId>
-            <version>2.0.5-RELEASE</version>
+            <version>2.0.6-RELEASE</version>
         </dependency>
 ```
  ### 配置文件
@@ -142,7 +142,7 @@ public class Delayed {
 }
 
 ```
-# 开发者自定义模块
+# 开发者自定义全局模块
 ## 自定义实现消息发送结果
 ```java
     @Component
@@ -180,3 +180,6 @@ public class MyTransactionChecker implements LocalTransactionChecker {
 	}
 }
 ```
+# 开发者自定义局部模块
+## @CommonMessage callbackBeanName指定bean名称
+## @TransactionMessage checkerBeanName与executerBeanName 指定bean名称
