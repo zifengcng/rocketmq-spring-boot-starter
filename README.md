@@ -15,16 +15,23 @@ Support function:
 
 # Timing message and delay message:
 Delay message and timing message:
-In the official case, delayed news is much the same as regular news, essentially ordinary news.
-If delay message and timing message are needed, it is recommended to use timing task (timing task scheduling platform)
-To achieve the purpose of delay or timing.
+In the official case, delayed news is much the same as regular news, essentially ordinary news.  
+
+If delay message and timing message are needed, it is recommended to use timing task (timing task scheduling platform)  
+
+To achieve the purpose of delay or timing.  
+
 
 # Transaction message：
- In the framework, the operations on transaction messages are simpler and simpler. You can complete the transaction messages by annotations only.
- Whether transactional messages, distributed transactional solutions or cross-platform language solutions, the core problem of transactional solutions is to ensure that messages can be sent and consumers can consume them.
- Reliability Guarantee
- 1.Add @TransactionMessage annotation, kernel guarantee, local transaction error, do not send message, correct execution, send message, that is, default submission.
- 2.Reliability assurance is adopted by default, and default submission is checked back. The reason comes from the previous factor, which guarantees that local transactions do not go wrong.
+ In the framework, the operations on transaction messages are simpler and simpler. You can complete the transaction messages by annotations only.  
+ 
+ Whether transactional messages, distributed transactional solutions or cross-platform language solutions, the core problem of transactional solutions is to ensure that messages can be sent and consumers can consume them.  
+ 
+ Reliability Guarantee  
+ 
+ 1.Add @TransactionMessage annotation, kernel guarantee, local transaction error, do not send message, correct execution, send message, that is, default submission.  
+ 
+ 2.Reliability assurance is adopted by default, and default submission is checked back. The reason comes from the previous factor, which guarantees that local transactions do not go wrong.  
  
 ## Quick Start
 
