@@ -124,22 +124,23 @@ public class Delayed {
 }
 ```
 # Subscribe to regular, transactional, delayed, timed messages
+Monitor messages using messageModel to control cluster or broadcast consumption patterns
 ```java
-@RocketListener(groupID = "GID_message")
+@RocketListener(groupID = "GID_message",messageModel = PropertyValueConst.CLUSTERING)
 public class Delayed {
     @MessageListener(topic = "message",tag = "message")	
     public void delayed(String message) {
-            return "message";
+    	System.out.println("message");
     }
 }
 ```
 # Subscription order message
 ```java
-@RocketListener(groupID = "GID_message")
+@RocketListener(groupID = "GID_message",messageModel = PropertyValueConst.BROADCASTING)
 public class Delayed {
     @MessageListener(topic = "message",tag = "message", orderConsumer = true)
     public void delayed(String message) {
-            return "message";
+            System.out.println("message");
     }
 }
 ```
