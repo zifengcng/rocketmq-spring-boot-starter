@@ -17,6 +17,7 @@
 package com.github.thierrysquirrel.core.factory.execution;
 
 import com.github.thierrysquirrel.core.factory.MethodFactory;
+import com.github.thierrysquirrel.core.serializer.GsonSerializer;
 import com.github.thierrysquirrel.core.serializer.MqSerializer;
 import com.github.thierrysquirrel.error.RocketException;
 import lombok.Data;
@@ -35,24 +36,27 @@ import java.lang.reflect.Method;
 @Data
 @Slf4j
 public class MethodFactoryExecution {
-	private Object bean;
-	private Method method;
-	private MqSerializer mqSerializer;
+    private Object bean;
+    private Method method;
+    private MqSerializer mqSerializer;
+    private final String STRING = "java.lang.String";
 
-	public MethodFactoryExecution(Object bean, Method method, MqSerializer mqSerializer) {
-		this.bean = bean;
-		this.method = method;
-		this.mqSerializer = mqSerializer;
-	}
+    public MethodFactoryExecution(Object bean, Method method, MqSerializer mqSerializer) {
+        this.bean = bean;
+        this.method = method;
+        this.mqSerializer = mqSerializer;
+    }
 
-	public void methodExecution(String messageJson) throws RocketException {
-		Class<?> methodParameter = MethodFactory.getMethodParameter(method);
-		Object methodParameterBean = mqSerializer.deserialize(messageJson.getBytes(), methodParameter);
-		try {
-			method.invoke(bean, methodParameterBean);
-		} catch (Exception e) {
-			throw new RocketException(e);
-		}
-	}
-
+    public void methodExecution(String messageJson) throws RocketException {
+        try {
+            Class<?> methodParameter = MethodFactory.getMethodParameter(method);
+            Object methodParameterBean = messageJson;
+            if(!STRING.equals(methodParameter.getTypeName())){
+                methodParameterBean = mqSerializer.deserialize(messageJson.getBytes(), methodParameter);
+            }
+            method.invoke(bean, methodParameterBean);
+        } catch (Exception e) {
+            throw new RocketException(e);
+        }
+    }
 }
