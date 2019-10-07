@@ -16,7 +16,11 @@
 
 package com.github.thierrysquirrel.annotation;
 
+import com.aliyun.openservices.ons.api.transaction.LocalTransactionChecker;
+import com.aliyun.openservices.ons.api.transaction.LocalTransactionExecuter;
 import com.aliyun.openservices.ons.api.transaction.TransactionStatus;
+import com.github.thierrysquirrel.core.producer.DefaultLocalTransactionChecker;
+import com.github.thierrysquirrel.core.producer.DefaultLocalTransactionExecuter;
 
 import java.lang.annotation.*;
 
@@ -60,16 +64,16 @@ public @interface TransactionMessage {
 	TransactionStatus transactionStatus() default TransactionStatus.CommitTransaction;
 
 	/**
-	 * 自定义LocalTransactionChecker bean名称
+	 * 自定义LocalTransactionChecker类
 	 *
-	 * @return checkerBeanName
+	 * @return checker类对象
 	 */
-	String checkerBeanName() default "";
+	Class<? extends LocalTransactionChecker> checker() default DefaultLocalTransactionChecker.class;
 
 	/**
-	 * 自定义LocalTransactionExecuter bean名称
+	 * 自定义LocalTransactionExecuter类
 	 *
-	 * @return executerBeanName
+	 * @return executer类对象
 	 */
-	String executerBeanName() default "";
+	Class<? extends LocalTransactionExecuter> executer() default DefaultLocalTransactionExecuter.class;
 }

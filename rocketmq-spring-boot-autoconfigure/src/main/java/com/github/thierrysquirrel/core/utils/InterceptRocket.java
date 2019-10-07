@@ -19,6 +19,8 @@ package com.github.thierrysquirrel.core.utils;
 import com.github.thierrysquirrel.annotation.RocketMessage;
 import com.github.thierrysquirrel.core.factory.execution.SendMessageFactoryExecution;
 import com.github.thierrysquirrel.core.factory.execution.ThreadPoolExecutorExecution;
+import com.github.thierrysquirrel.core.serializer.GsonSerializer;
+import com.github.thierrysquirrel.core.serializer.MqSerializer;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.context.ApplicationContext;
@@ -46,11 +48,11 @@ public class InterceptRocket {
 
 		T annotation = method.getAnnotation(annotationClass);
 		Object proceed = proceedingJoinPoint.proceed();
-
-		byte[] body = ByteUtils.objectToByte(proceed);
-
+		Map<String, MqSerializer> mqSerializerMap = applicationContext.getBeansOfType(MqSerializer.class);
+		MqSerializer[] mqSerializers = mqSerializerMap.values().toArray(new MqSerializer[mqSerializerMap.size()]);
+		MqSerializer mqSerializer = (mqSerializerMap==null||mqSerializerMap.size()==0)?new GsonSerializer():mqSerializers[0];
+		byte[] body = mqSerializer.serialize(proceed);
 		RocketMessage rocketMessage = method.getDeclaringClass().getAnnotation(RocketMessage.class);
-
 		ThreadPoolExecutorExecution.statsThread(threadPoolExecutor, new SendMessageFactoryExecution(consumerContainer, rocketMessage, annotation, body, applicationContext));
 		return proceed;
 	}
