@@ -23,7 +23,7 @@ import com.github.thierrysquirrel.core.factory.ThreadPoolFactory;
 import com.github.thierrysquirrel.core.factory.execution.ConsumerFactoryExecution;
 import com.github.thierrysquirrel.core.factory.execution.MethodFactoryExecution;
 import com.github.thierrysquirrel.core.factory.execution.ThreadPoolExecutorExecution;
-import com.github.thierrysquirrel.core.serializer.MqSerializer;
+import com.github.thierrysquirrel.core.serializer.RocketSerializer;
 import com.github.thierrysquirrel.core.utils.AnnotatedMethodsUtils;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -43,10 +43,10 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class RocketConsumerContainer implements ApplicationContextAware {
 	private ApplicationContext applicationContext;
 	private RocketProperties rocketProperties;
-	private MqSerializer mqSerializer;
-	public RocketConsumerContainer(RocketProperties rocketProperties, MqSerializer mqSerializer) {
+	private RocketSerializer mqSerializer;
+	public RocketConsumerContainer(RocketProperties rocketProperties, RocketSerializer rocketSerializer) {
 		this.rocketProperties = rocketProperties;
-		this.mqSerializer = mqSerializer;
+		this.mqSerializer = rocketSerializer;
 	}
 
 	@PostConstruct

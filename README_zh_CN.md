@@ -39,7 +39,7 @@
         <dependency>
             <artifactId>rocketmq-spring-boot-starter</artifactId>
             <groupId>com.github.thierrysquirrel</groupId>
-            <version>2.0.6-RELEASE</version>
+            <version>2.0.7-RELEASE</version>
         </dependency>
 ```
  ### 配置文件
@@ -186,14 +186,14 @@ public class MyTransactionChecker implements LocalTransactionChecker {
 ## 自定义 Mq序列化器
 ```java
 @Component
-public class JacksonSerializer implements MqSerializer {
+public class JacksonSerializer implements RocketSerializer {
 	private static ObjectMapper objectMapper = new ObjectMapper();
     @Override
-    public byte[] serialize(Object obj) {
+    public <T> byte[] serialize(T object) {
         //omit
     }
     @Override
-    public Object deserialize(byte[] bytes, Class<?> clazz) {
+    public <T> T deSerialize(byte[] bytes, Class<T> clazz) {
         //omit
     }
 }

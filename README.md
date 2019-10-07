@@ -40,7 +40,7 @@ To achieve the purpose of delay or timing.
         <dependency>
             <artifactId>rocketmq-spring-boot-starter</artifactId>
             <groupId>com.github.thierrysquirrel</groupId>
-            <version>2.0.6-RELEASE</version>
+            <version>2.0.7-RELEASE</version>
         </dependency>
 ```
  ### configuration file
@@ -183,10 +183,10 @@ public class MyTransactionChecker implements LocalTransactionChecker {
     }
 }
 ```
-## Custom MqSerializer
+## Custom RocketSerializer
 ```java
 @Component
-public class JacksonSerializer implements MqSerializer {
+public class JacksonSerializer implements RocketSerializer {
 	private static ObjectMapper objectMapper = new ObjectMapper();
     @Override
     public byte[] serialize(Object obj) {

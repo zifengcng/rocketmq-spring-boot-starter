@@ -23,9 +23,7 @@ import com.aliyun.openservices.ons.api.transaction.TransactionStatus;
 import com.github.thierrysquirrel.core.producer.DefaultLocalTransactionChecker;
 import com.github.thierrysquirrel.core.producer.DefaultLocalTransactionExecuter;
 import com.github.thierrysquirrel.core.producer.DefaultSendCallback;
-import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
-import org.springframework.util.StringUtils;
 
 /**
  * ClassName: ApplicationContextUtils
